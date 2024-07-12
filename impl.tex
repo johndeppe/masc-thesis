@@ -11,4 +11,16 @@
 
 Inspired by ABIS \cite{amit_optimizing_2017}, we base our efforts on the Linux kernel.
 
+For a process of interest, selected at process initialization with a flag
+
+(TODO: How? \verb+prctl()+? Is there a better way? I don't want to have to flush a bunch of TLBs to set this mode, but I guess that's probably the right thing to do. Yuck. Maybe let's push it down to the VMA-level and set it with madvise()?)
+
+we'll allocate PTEs with extra space for a cpumask that tracks cores have that PTE in their TLB. (TODO: Where do these PTEs go? When do they get allocated?)
+
+We detect TLB presence by avoiding the hardware page table walker. The process of interest gets an empty satp entry, so all page walks will fault. When we fault, we use c920's TLB-manipulation registers to insert the appropriate TLB entry and then mark the appropriate cpumask. We can then also clear the cpumask of the evicted entry, which also appears in the TLB-manipulation registers.
+
+definitely have to hack {pagetable\_alloc()} \url{https://github.com/johndeppe/linux-riscv/blob/eadff10a39c6faf2e486ed108e3a3bc4c2bb77b3/include/linux/mm.h#L2851}
+
+https://docs.kernel.org/core-api/printk-basics.html
+
 \endinput
