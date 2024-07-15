@@ -9,6 +9,22 @@
 	---~Captain Gabriel Lorca, Star Trek: Discovery
 \end{epigraph}
 
-There's a lot to lay out before one can understand what we're doing.
+TLB coherence has been a thorn in the side of OS writers since the TLB was invented. Patricia Teller outlines the problem nicely, which is that computer manufacturers of the 80s found TLB coherence to be too expensive, and delegated the problem to software. \cite{teller_cost_1990}. \textit{TLB Shootdown}~\cite{black_translation_1989} has become the industry-standard procedure to maintain TLB coherence in popular multi-core architectures including x86, ARM, and RISC-V.
+
+Page tables are typically multi-level radix trees, but other organizations are also used~\cite{jacob_look_1998}. Linux's design uses radix page tables as a unifying approach to managing virtual memory across architectures~\cite{torvalds_linux_1997}.
+
+POWER, ARM, and some RISC-V vendor extensions have inter-core TLB invalidations that don't require IPIs. IPIs create undesirable overhead but even ARM's hardware shootdown can suffer by broadcasting to uninvolved cores~\cite{takao_indoh_patch_2019}.
+
+Intel has recently implemented a hardware TLB invalidation~\cite{intel_corporation_remote_2021} but nobody is using it anywhere as far as I can tell?
+
+With virtualization and hypervisors, maintaining TLB coherence has become complex.
+
+ASIDs, page permissions, weak memory models and races.
+
+TLB shootdowns lead to latency spikes and jitter, \cite{rigtorp_latency_2020, gallenmuller_ducked_2021, gallenmuller_how_2022}. Such latencies present limiting design concerns for systems that oversubscribe memory, including databases~\cite{crotty_are_2022} and fine-grained protection \cite{porter_decker_2023}.
+
+The complex interface leads to operating system bugs~\cite{wong_tlb_2015}, including critical vulnerabilities~\cite{horn_project_2019}.
+
+RISC-V is still emerging, the Svvptc extension lets many sfence.vma instructions be elided~\cite{ghiti_patch_2024}. There's also Svadu and Svinval. Confusing! I'll have to write more about how RISC-V transistency works.
 
 \endinput

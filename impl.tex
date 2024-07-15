@@ -1,7 +1,7 @@
 %% The following is a directive for TeXShop to indicate the main file
 %%!TEX root = diss.tex
 
-\chapter{Implementing Smokewagon}
+\chapter{Smokewagon's Design and Implementation}
 \label{ch:Implementation}
 
 \begin{epigraph}
@@ -22,5 +22,40 @@ We detect TLB presence by avoiding the hardware page table walker. The process o
 definitely have to hack {pagetable\_alloc()} \url{https://github.com/johndeppe/linux-riscv/blob/eadff10a39c6faf2e486ed108e3a3bc4c2bb77b3/include/linux/mm.h#L2851}
 
 https://docs.kernel.org/core-api/printk-basics.html
+
+
+We'd like to make the TLB maintenance process simpler for the systems programmer, as it is described as a substantial difficulty by new OS writers \cite{boos_theseus_2022} and (how do I cite Email with Boos and talking to Twizzler author Daniel Bittman in Margo's CPSC 509? I need to find the date probably.) BypassD-style systems \cite{yadalam_bypassd_2024} make this even more important if filesystems become integrated into the translation process.
+
+\section{Global ASID in RISC-V?}
+If the hardware is making decisions about where to send translation coherence messages, it might be useful to have ASID \& VMID be global instead of hart-local?
+
+PS-TLB \cite{li_ps-tlb_2013, li_leveraging_2012} classifies pages as private or shared to choose storing their translations in core-private or big NUCA-shared TLBs. This or similar classification data then be used to reduce overall cache coherence traffic, somehow~\cite{esteve_tlb-based_2017}?
+
+\section{How do we identify PTEs in memory?}
+
+UNITD/HATRIC? By page-walker, at TLB insertion time
+
+DiDi?
+
+ATTC?
+
+real ARM/x86/POWER/RISC-V/etc architectures?
+
+\section{How to recognize a PTE write?}
+
+Special instruction? Hardware bit set when page walking?
+
+\section{Write-update for Page Table Entries?}
+
+UNITD and HATRIC write-invalidate all PTEs on a cache-line when they see the cache-line change. That's overkill. We can at least reduce it to just the modified PTE.
+
+Usually one wants write-invalidate instead of write-update because many entries will be dead. Can we pick out which PTEs we expect to be live or dead in a TLB and use that to decide?
+
+If we just write-invalidate or write-update, which do we want?
+
+\section{A First Attempt: Page Access Tracking Overhead}
+First, measure benchmarks on our baseline system. Then add software page access tracking and software TLB eviction tracking. Try software TLB shootdown with just page access tracking and then page access tracking AND TLB eviction tracking. Then try hardware remote TLB invalidation with each.
+
+If the software tracking overheads are too much, is that an argument for hardware tracking? DiDi-style~\cite{villavieja_didi_2011} inclusion?
 
 \endinput

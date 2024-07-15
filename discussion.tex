@@ -1,0 +1,53 @@
+%% The following is a directive for TeXShop to indicate the main file
+%%!TEX root = diss.tex
+
+\chapter{Performance Discussion}
+\label{ch:discussion}
+
+\begin{epigraph}
+	\emph{Found it. There's your problem.}\\
+	---~Harry Tuttle, Brazil
+\end{epigraph}
+
+\subsection{Benchmarks}
+
+page-unmapping microbenchmark
+
+apache
+
+oversubscribed database
+
+
+\section{Related Work}
+\textbf{Page Access Tracking:} ABIS~\cite{amit_optimizing_2017} tracks pages accessed for the purpose of reducing shootdown IPI overhead.
+
+\textbf{Software Shootdown Batching:} LATR~\cite{kumar_latr_2018} and EcoTLB~\cite{maass_ecotlb_2020} delay and batch shootdowns that can be delayed, such as memory deallocation.
+
+\textbf{Software Hugepage Creation:} TridentPV~\cite{ram_trident_2021} has a nice hypercall trick to create guest hugepages quickly that improved TLB shootdowns will make faster.
+
+\textbf{RISC-V Caches and Coherence:} Skip It~\cite{anand_skip_2024} avoids unnecessary writebacks with special instructions implemented in BOOM.
+
+Svinval extension allows TLB invalidation without a complete fence.
+
+Svvptc allows eliding some sfence.vmas \url{https://lore.kernel.org/lkml/Zbuy1E7mz9Oui1Dl@andrea/T/#m34eae90356460ae5fc28b0e9ff27b14fe24413e0}
+
+A clue for how to manage speculative page faults while mucking about with page tables? \url{https://lore.kernel.org/linux-riscv/20230801090927.2018653-1-dylan@andestech.com/}
+
+\textbf{Hardware TLB Coherence:}
+UNITD~\cite{romanescu_unified_2010}
+HATRIC~\cite{yan_hardware_2017}
+DiDi~\cite{villavieja_didi_2011}
+
+ATTC~\cite{gugale_attc_2020} manages shootdowns from both guests and hosts by using writes to an in-DRAM TLB to trigger coherence actions. This requires modifying the guests to use such a para-virtualized scheme. PIN trace-based simulation.
+
+\textbf{etc:} CC-NIC provides reduces NIC latency with cache-coherence~\cite{schuh_cc-nic_2024}. The producer-consumer workload of NICs presents another case where write-updates might be useful.
+
+\section{Future Work}
+
+TLB evictions can also be useful for predicting cacheline deadness. If a cacheline doesn't have any translations present in the TLB, is it likely dead? Not if you're just invalidating to change permissions, but otherwise probably yes. Write-updates clarify that and potentially make TLB-presence a more-useful deadness prediction factor. KPTI is a potential hazard here. What's the through-line on old TLB research \cite{clark_performance_1985} wondering if we should keep system pages vs. KPTI, I wonder?
+
+Apply these learnings to a hardware system built with Minjie~\cite{xu_towards_2022} or Chipyard~\cite{amid_chipyard_2020}.
+
+Page access tracking (or especially full coherence) could benefit security by allowing the TLB to unmap more aggressively and protect sensitive data from being accessed speculatively https://lwn.net/Articles/974390/
+
+\endinput

@@ -10,12 +10,11 @@
   pages = {10--21},
   issn = {0272-1732, 1937-4143},
   doi = {10.1109/MM.2020.2996616},
-  url = {https://ieeexplore.ieee.org/document/9099108/},
   urldate = {2024-05-06},
   abstract = {Continued improvement in computing efficiency requires functional specialization of hardware designs. Agile hardware design methodologies have been proposed to alleviate the increased design costs of custom silicon architectures, but their practice thus far has been accompanied with challenges in integration and validation of complex systems-on-a-chip (SoCs). We present the Chipyard framework, an integrated SoC design, simulation, and implementation environment for specialized compute systems. Chipyard includes configurable, composable, open-source, generator-based IP blocks that can be used across multiple stages of the hardware development flow while maintaining design intent and integration consistency.},
   copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/K2NJAJNT/Amid et al. - 2020 - Chipyard Integrated Design, Simulation, and Implementation Framework for Custom SoCs.pdf}
+  file = {/Users/deppe/Zotero/storage/K2NJAJNT/Amid et al. - 2020 - Chipyard Integrated Design, Simulation, and Implementation Framework for Custom SoCs.pdf}
 }
 
 @inproceedings{amit_dont_2020,
@@ -29,11 +28,10 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3342195.3387518},
-  url = {https://dl.acm.org/doi/10.1145/3342195.3387518},
   urldate = {2024-04-17},
   abstract = {Translation Lookaside Buffers (TLBs) are critical for building performant virtual memory systems. Because most processors do not provide coherence for TLB mappings, TLB shootdowns provide a software mechanism that invokes inter-processor interrupts (IPLs) to synchronize TLBs. TLB shootdowns are expensive, so recent work has aimed to avoid the frequency of shootdowns through techniques such as batching. We show that aggressive batching can cause correctness issues and addressing them can obviate the benefits of batching. Instead, our work takes a different approach which focuses on both improving the performance of TLB shootdowns and carefully selecting where to avoid shootdowns. We introduce four general techniques to improve shootdown performance: (1) concurrently flush initiator and remote TLBs, (2) early acknowledgement from remote cores, (3) cacheline consolidation of kernel data structures to reduce cacheline contention, and (4) in-context flushing of userspace entries to address the overheads introduced by Spectre and Meltdown mitigations. We also identify that TLB flushing can be avoiding when handling copy-on-write (CoW) faults and some TLB shootdowns can be batched in certain system calls. Overall, we show that our approach results in significant speedups without sacrificing safety and correctness in both microbenchmarks and real-world applications.},
   isbn = {978-1-4503-6882-7},
-  file = {/home/deppe/Zotero/storage/7C34Y5UB/Amit et al. - 2020 - Don't shoot down TLB shootdowns!.pdf}
+  file = {/Users/deppe/Zotero/storage/7C34Y5UB/Amit et al. - 2020 - Don't shoot down TLB shootdowns!.pdf}
 }
 
 @inproceedings{amit_optimizing_2017,
@@ -43,11 +41,10 @@
   year = {2017},
   pages = {27--39},
   address = {Santa Clara, CA, USA},
-  url = {https://www.usenix.org/conference/atc17/technical-sessions/presentation/amit},
   urldate = {2024-04-17},
   isbn = {978-1-931971-38-6},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/TCZUDWY2/Amit - 2017 - Optimizing the TLB Shootdown Algorithm with Page.pdf}
+  file = {/Users/deppe/Zotero/storage/TCZUDWY2/Amit - 2017 - Optimizing the TLB Shootdown Algorithm with Page.pdf}
 }
 
 @inproceedings{anand_skip_2024,
@@ -63,12 +60,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3620665.3640407},
-  url = {https://dl.acm.org/doi/10.1145/3620665.3640407},
   urldate = {2024-05-06},
   abstract = {Mechanisms to explicitly manage the presence of data in caches are fundamental for the correctness and performance of modern systems. These operations, while critical, often incur significant performance penalties even when carefully used. Moreover, these mechanisms are implemented in proprietary and often undocumented hardware, so research into optimizations and novel designs is mostly limited to slow, simplified software simulations. In this paper, we design microarchitectural extensions to support two types of user-controlled cache writebacks to main memory. Furthermore, we propose Skip It, a mechanism built on top of our extensions that substantially reduces redundant writebacks. We implemented these designs on the open-source BOOM out-of-order RISC-V CPU. The performance in hardware is {$\approx$} 100 cycles which favorably compares to similar operations in commercially available server-class platforms. In addition, Skip It performs as well as or better than state-of-the-art software techniques for avoiding unnecessary writebacks.},
   isbn = {9798400703850},
   keywords = {cache coherence,cacheline flush,fence,FPGA simulation,microarchitecture,multicore,non-volatile memory,out-of-order,RISC-V},
-  file = {/home/deppe/Zotero/storage/FJGRSPMM/Anand et al. - 2024 - Skip It Take Control of Your Cache!.pdf}
+  file = {/Users/deppe/Zotero/storage/FJGRSPMM/Anand et al. - 2024 - Skip It Take Control of Your Cache!.pdf}
 }
 
 @inproceedings{black_translation_1989,
@@ -83,11 +79,10 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/70082.68193},
-  url = {https://dl.acm.org/doi/10.1145/70082.68193},
   urldate = {2024-03-25},
   abstract = {We discuss the translation lookaside buffer (TLB) consistency problem for multiprocessors, and introduce the Mach shootdown algorithm for maintaining TLB consistency in software. This algorithm has been implemented on several multiprocessors, and is in regular production use. Performance evaluations establish the basic costs of the algorithm and show that it has minimal impact on application performance. As a result, TLB consistency does not pose an insurmountable obstacle to multiprocessors with several hundred processors. We also discuss hardware support options for TLB consistency ranging from a minor interrupt structure modification to complete hardware implementations. Features are identified in current hardware that compound the TLB consistency problem; removal or correction of these features can simplify and/or reduce the overhead of maintaining TLB consistency in software.},
   isbn = {978-0-89791-300-3},
-  file = {/home/deppe/Zotero/storage/2PKT7VRT/Black et al. - 1989 - Translation lookaside buffer consistency a softwa.pdf}
+  file = {/Users/deppe/Zotero/storage/2PKT7VRT/Black et al. - 1989 - Translation lookaside buffer consistency a softwa.pdf}
 }
 
 @misc{boos_theseus_2022,
@@ -95,9 +90,8 @@
   author = {Boos, Kevin},
   year = {2022},
   month = dec,
-  url = {https://mail.google.com/mail/u/0/#inbox/KtbxLwgswrbwDJtxqPmlTkKmmhBNPvMqLB},
   urldate = {2024-05-30},
-  file = {/home/deppe/Zotero/storage/9TCCIKV2/0.html}
+  file = {/Users/deppe/Zotero/storage/9TCCIKV2/0.html}
 }
 
 @inproceedings{brown_is_2023,
@@ -112,12 +106,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3624062.3624234},
-  url = {https://dl.acm.org/doi/10.1145/3624062.3624234},
   urldate = {2024-04-25},
   abstract = {The Sophon SG2042 is the world's first commodity 64-core RISC-V CPU for high performance workloads and an important question is whether the SG2042 has the potential to encourage the HPC community to embrace RISC-V. In this paper we undertaking a performance exploration of the SG2042 against existing RISC-V hardware and high performance x86 CPUs in use by modern supercomputers. Leveraging the RAJAPerf benchmarking suite, we discover that on average, the SG2042 delivers, per core, between five and ten times the performance compared to the nearest widely available RISC-V hardware. We found that, on average, the x86 high performance CPUs under test outperform the SG2042 by between four and eight times for multi-threaded workloads, although some individual kernels do perform faster on the SG2042. The result of this work is a performance study that not only contrasts this new RISC-V CPU against existing technologies, but furthermore shares performance best practice.},
   isbn = {9798400707858},
   keywords = {HPC benchmarking,RAJAPerf,RISC-V,Sophon SG2042,XuanTie C920},
-  file = {/home/deppe/Zotero/storage/KJ76S4UQ/Brown et al. - 2023 - Is RISC-V ready for HPC prime-time Evaluating the.pdf}
+  file = {/Users/deppe/Zotero/storage/KJ76S4UQ/Brown et al. - 2023 - Is RISC-V ready for HPC prime-time Evaluating the.pdf}
 }
 
 @inproceedings{chen_xuantie-910_2020,
@@ -129,11 +122,10 @@
   month = may,
   pages = {52--64},
   doi = {10.1109/ISCA45697.2020.00016},
-  url = {https://ieeexplore.ieee.org/document/9138983},
   urldate = {2024-04-26},
   abstract = {The open source RISC-V ISA has been quickly gaining momentum. This paper presents Xuantie-910, an industry leading 64-bit high performance embedded RISC-V processor from Alibaba T-Head division. It is fully based on the RV64GCV instruction set and it features custom extensions to arithmetic operation, bit manipulation, load and store, TLB and cache operations. It also implements the 0.7.1 stable release of RISCV vector extension specification for high efficiency vector processing. Xuantie-910 supports multi-core multi-cluster SMP with cache coherence. Each cluster contains 1 to 4 core(s) capable of booting the Linux operating system. Each single core utilizes the state-of-the-art 12-stage deep pipeline, out-of-order, multi-issue superscalar architecture, achieving a maximum clock frequency of 2.5 GHz in the typical process, voltage and temperature condition in a TSMC 12nm FinFET process technology. Each single core with the vector execution unit costs an area of 0.8 mm2, (excluding the L2 cache). The toolchain is enhanced significantly to support the vector extension and custom extensions. Through hardware and toolchain co-optimization, to date Xuantie-910 delivers the highest performance (in terms of IPC, speed, and power efficiency) for a number of industrial control flow and data computing benchmarks, when compared with its predecessors in the RISC-V family. Xuantie-910 FPGA implementation has been deployed in the data centers of Alibaba Cloud, for applicationspecific acceleration (e.g., blockchain transaction). The ASIC deployment at low-cost SoC applications, such as IoT endpoints and edge computing, is planned to facilitate Alibaba's end-to-end and cloud-to-edge computing infrastructure.},
   keywords = {cache,extension,memory architectures,multi-core,out of order,RISC-V,vector},
-  file = {/home/deppe/Zotero/storage/LR4HNU84/Chen et al. - 2020 - Xuantie-910 A Commercial Multi-Core 12-Stage Pipeline Out-of-Order 64-bit High Performance RISC-V P.pdf;/home/deppe/Zotero/storage/HJIEAPB3/9138983.html}
+  file = {/Users/deppe/Zotero/storage/LR4HNU84/Chen et al. - 2020 - Xuantie-910 A Commercial Multi-Core 12-Stage Pipeline Out-of-Order 64-bit High Performance RISC-V P.pdf;/Users/deppe/Zotero/storage/HJIEAPB3/9138983.html}
 }
 
 @misc{chu_are_2024,
@@ -142,11 +134,11 @@
   year = {2024},
   month = feb,
   journal = {Symas},
-  url = {https://www.symas.com/post/are-you-sure-you-want-to-use-mmap-in-your-dbms},
   urldate = {2024-04-18},
   abstract = {A paper with the above provocative title started making the rounds back in 2022. While we originally discussed it over twitter, and some of our colleagues wrote longer responses on their blogs, we never wrote a long form response before. But since the paper keeps resurfacing from time to time, it seemed like a good idea to address it in depth, once and for all.The paper in question can be read from here https://cs.brown.edu/people/acrotty/pubs/p13-crotty.pdf. The RavenDB guys, whose Voron DB eng},
+  howpublished = {https://www.symas.com/post/are-you-sure-you-want-to-use-mmap-in-your-dbms},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/WI2E4UWA/are-you-sure-you-want-to-use-mmap-in-your-dbms.html}
+  file = {/Users/deppe/Zotero/storage/WI2E4UWA/are-you-sure-you-want-to-use-mmap-in-your-dbms.html}
 }
 
 @misc{cidr_db_are_2022,
@@ -154,7 +146,6 @@
   author = {{CIDR DB}},
   year = {2022},
   month = jan,
-  url = {https://www.youtube.com/watch?v=1BRGU_AS25c},
   urldate = {2024-04-18},
   abstract = {Paper: http://cidrdb.org/cidr2022/papers/p13... Authors: Andrew Crotty (Carnegie Mellon University)*; Viktor Leis (Friedrich-Alexander-Universit{\"a}t Erlangen-N{\"u}rnberg); Andrew Pavlo (Carnegie Mellon University)}
 }
@@ -171,10 +162,9 @@
   pages = {31--62},
   issn = {0734-2071},
   doi = {10.1145/214451.214455},
-  url = {https://dl.acm.org/doi/10.1145/214451.214455},
   urldate = {2024-02-18},
   abstract = {A virtual-address translation buffer (TB) is a hardware cache of recently used virtual-to-physical address mappings. The authors present the results of a set of measurements and simulations of translation buffer performance in the VAX-11/780. Two different hardware monitors were attached to VAX-11/780 computers, and translation buffer behavior was measured. Measurements were made under normal time-sharing use and while running reproducible synthetic time-sharing work loads. Reported measurements include the miss ratios of data and instruction references, the rate of TB invalidations due to context switches, and the amount of time taken to service TB misses. Additional hardware measurements were made with half the TB disabled. Trace-driven simulations of several programs were also run; the traces captured system activity as well as user-mode execution. Several variants of the 11/780 TB structure were simulated.},
-  file = {/home/deppe/Zotero/storage/QKT4K4S4/Clark and Emer - 1985 - Performance of the VAX-11780 translation buffer .pdf}
+  file = {/Users/deppe/Zotero/storage/QKT4K4S4/Clark and Emer - 1985 - Performance of the VAX-11780 translation buffer .pdf}
 }
 
 @inproceedings{clements_radixvm_2013,
@@ -189,11 +179,10 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/2465351.2465373},
-  url = {https://dl.acm.org/doi/10.1145/2465351.2465373},
   urldate = {2024-04-19},
   abstract = {RadixVM is a new virtual memory system design that enables fully concurrent operations on shared address spaces for multithreaded processes on cache-coherent multicore computers. Today, most operating systems serialize operations such as mmap and munmap, which forces application developers to split their multithreaded applications into multiprocess applications, hoard memory to avoid the overhead of returning it, and so on. RadixVM removes this burden from application developers by ensuring that address space operations on non-overlapping memory regions scale perfectly. It does so by combining three techniques: 1) it organizes metadata in a radix tree instead of a balanced tree to avoid unnecessary cache line movement; 2) it uses a novel memory-efficient distributed reference counting scheme; and 3) it uses a new scheme to target remote TLB shootdowns and to often avoid them altogether. Experiments on an 80 core machine show that RadixVM achieves perfect scalability for non-overlapping regions: if several threads mmap or munmap pages in parallel, they can run completely independently and induce no cache coherence traffic.},
   isbn = {978-1-4503-1994-2},
-  file = {/home/deppe/Zotero/storage/IY9KHHBI/Clements et al. - 2013 - RadixVM scalable address spaces for multithreaded.pdf}
+  file = {/Users/deppe/Zotero/storage/IY9KHHBI/Clements et al. - 2013 - RadixVM scalable address spaces for multithreaded.pdf}
 }
 
 @inproceedings{crotty_are_2022,
@@ -202,11 +191,10 @@
   author = {Crotty, Andrew and Leis, Viktor and Pavlo, Andrew},
   year = {2022},
   address = {Chaminade, California},
-  url = {https://db.cs.cmu.edu/mmap-cidr2022/},
   urldate = {2024-04-18},
   abstract = {MMAP Databases = 💩},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/T4CB7XM7/mmap-cidr2022.html}
+  file = {/Users/deppe/Zotero/storage/T4CB7XM7/mmap-cidr2022.html}
 }
 
 @inproceedings{elnawawy_diligent_2019,
@@ -220,19 +208,18 @@
   publisher = {ACM},
   address = {Phoenix Arizona},
   doi = {10.1145/3330345.3330363},
-  url = {https://dl.acm.org/doi/10.1145/3330345.3330363},
   urldate = {2024-07-02},
   abstract = {Modern workloads such as graph analytics, sparse matrix multiplication, and in-memory key-value stores use very large datasets and typically have non-uniform memory access patterns which defy traditional concepts of locality. Moreover, many of these algorithms simultaneously use multiple data structures that have very distinct access patterns to the corresponding pages, leading to heterogeneity in TLB behavior. Our intuition suggests that these two factors make it important to architect a heterogeneity-aware TLB hierarchy.},
   isbn = {978-1-4503-6079-1},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/WRJBS4LY/Elnawawy et al. - 2019 - Diligent TLBs a mechanism for exploiting heterogeneity in TLB miss behavior.pdf}
+  file = {/Users/deppe/Zotero/storage/WRJBS4LY/Elnawawy et al. - 2019 - Diligent TLBs a mechanism for exploiting heterogeneity in TLB miss behavior.pdf}
 }
 
 @article{eskicioglu_quick_nodate,
   title = {Quick and {{Dirty Instructions}} for the {{New ACM Typesetting Format}}---Acmart {{Class}}},
   author = {Eskicioglu, Rasit},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/5E2ISJ3Z/Eskicioglu - Quick and Dirty Instructions for the New ACM Types.pdf}
+  file = {/Users/deppe/Zotero/storage/5E2ISJ3Z/Eskicioglu - Quick and Dirty Instructions for the New ACM Types.pdf}
 }
 
 @article{esteve_tlb-based_2017,
@@ -246,11 +233,10 @@
   pages = {2401--2413},
   issn = {1558-2183},
   doi = {10.1109/TPDS.2017.2658576},
-  url = {https://ieeexplore.ieee.org/document/7833158},
   urldate = {2024-05-30},
   abstract = {Recent proposals are based on classifying memory accesses into private or shared in order to process private accesses more efficiently and reduce coherence overhead. The classification mechanisms previously proposed are either not able to adapt to the dynamic sharing behavior of the applications or require frequent broadcast messages. Additionally, most of these classification approaches assume single-level translation lookaside buffers (TLBs). However, deeper and more efficient TLB hierarchies, such as the ones implemented in current commodity processors, have not been appropriately explored. This paper analyzes accurate classification mechanisms in multilevel TLB hierarchies. In particular, we propose an efficient data classification strategy for systems with distributed shared last-level TLBs. Our approach classifies data accounting for temporal private accesses and constrains TLB-related traffic by issuing unicast messages on first-level TLB misses. When our classification is employed to deactivate coherence for private data in directory-based protocols, it improves the directory efficiency and, consequently, reduces coherence traffic to merely 53.0 percent, on average. Additionally, it avoids some of the overheads of previous classification approaches for purely private TLBs, improving average execution time by nearly 9 percent for large-scale systems.},
   keywords = {Coherence,coherence deactivation,data classification,Distributed shared TLB,Electronic mail,Maintenance engineering,Organizations,Program processors,Proposals,Protocols,TLB usage predictor},
-  file = {/home/deppe/Zotero/storage/ECCGNT7N/Esteve et al. - 2017 - TLB-Based Temporality-Aware Classification in CMPs with Multilevel TLBs.pdf;/home/deppe/Zotero/storage/RUQVIXHA/7833158.html}
+  file = {/Users/deppe/Zotero/storage/ECCGNT7N/Esteve et al. - 2017 - TLB-Based Temporality-Aware Classification in CMPs with Multilevel TLBs.pdf;/Users/deppe/Zotero/storage/RUQVIXHA/7833158.html}
 }
 
 @inproceedings{gallenmuller_ducked_2021,
@@ -263,11 +249,10 @@
   pages = {537--543},
   issn = {2165-963X},
   doi = {10.23919/CNSM52442.2021.9615532},
-  url = {https://ieeexplore.ieee.org/abstract/document/9615532},
   urldate = {2024-04-29},
   abstract = {Latency can be caused by delayed processing of packets on the nodes of a computer network. Latency figures tend to fluctuate, eventually creating substantial spikes leading to a long-tailed latency distribution. The absolute latency value and its distribution over time impact the service quality of computer networks-an essential requirement for novel services such as networked industrial control systems or remote medical procedures. In this work, we present our measurement methodology for packet processing systems to determine the latency reliably, and more importantly, its distribution, using highly accurate and precise hardware timestamping on off-the-shelf network interface cards (NICs). Further, we introduce an optimized software stack to run low-latency applications on regular Linux servers. Our investigation focuses on realtime features of the Linux kernel. The performance of our optimized software stack is demonstrated using a real-world application, the Snort intrusion prevention system (IPS). Across various scenarios, we achieve a maximum worst-case latency as low as 25 {\textmu}s. This result is an almost 5-fold reduction of the measured tail latencies compared to a previous study.},
   keywords = {5G,DPDK,Hardware,IPS,latency measurements,Linux,MoonGen,Process control,Servers,Software,Software measurement,Time measurement,URLLC},
-  file = {/home/deppe/Zotero/storage/FJVPHRL9/Gallenmüller et al. - 2021 - Ducked Tails Trimming the Tail Latency of(f) Packet Processing Systems.pdf;/home/deppe/Zotero/storage/BPWRK9EM/9615532.html}
+  file = {/Users/deppe/Zotero/storage/FJVPHRL9/Gallenmüller et al. - 2021 - Ducked Tails Trimming the Tail Latency of(f) Packet Processing Systems.pdf;/Users/deppe/Zotero/storage/BPWRK9EM/9615532.html}
 }
 
 @article{gallenmuller_how_2022,
@@ -282,12 +267,11 @@
   pages = {20},
   issn = {1573-7705},
   doi = {10.1007/s10922-022-09710-3},
-  url = {https://doi.org/10.1007/s10922-022-09710-3},
   urldate = {2024-04-29},
   abstract = {Throughput is a commonly used performance indicator for networks. However, throughput may be considered insignificant if data is outdated or networks become unpredictable or unreliable. Critical services may even prioritize latency, predictability, and reliability at the expense of throughput to avoid detrimental effects on service operation. Latency, predictability, and reliability are distinct qualities realized in real-time systems. Real-time systems often require additional effort using non-standard interfaces, requiring customized software, or providing low throughput figures. This work picks up the challenge and investigates a single-server network function---a building block for end-to-end low-latency network applications. Assessing reliability and quantifying low latency is equally challenging, as sub-microsecond latency and \$\$1/10{\textasciicircum}\{5\}\$\$loss probability leave little room for error. Both, our measurement and the investigated platforms, rely on Linux running on off-the-shelf components. Our paper provides a comprehensive study on the impact of various components on latency and reliability, such as the central processing unit (CPU), the Linux Kernel, the network card, virtualization features, and the networking application itself. We chose Suricata, an intrusion prevention system (IPS), representing a widely deployed, typical network application as our primary subject of investigation.},
   langid = {english},
   keywords = {DPDK,Intrusion prevention,Low latency,Network experiment,Ultra reliable},
-  file = {/home/deppe/Zotero/storage/VRZA4AX2/Gallenmüller et al. - 2022 - How Low Can You Go A Limbo Dance for Low-Latency Network Functions.pdf}
+  file = {/Users/deppe/Zotero/storage/VRZA4AX2/Gallenmüller et al. - 2022 - How Low Can You Go A Limbo Dance for Low-Latency Network Functions.pdf}
 }
 
 @misc{ghiti_patch_2024,
@@ -295,16 +279,22 @@
   author = {Ghiti, Alexandre},
   year = {2024},
   month = jan,
-  url = {https://lore.kernel.org/lkml/Zbuy1E7mz9Oui1Dl@andrea/T/},
   urldate = {2024-04-29},
-  file = {/home/deppe/Zotero/storage/I7KXZV2G/T.html}
+  file = {/Users/deppe/Zotero/storage/I7KXZV2G/T.html}
 }
 
-@article{gorman_understanding_nodate,
-  title = {Understanding {{The Linux Virtual Memory Manager}}},
+@book{gorman_understanding_2004,
+  title = {Understanding the {{Linux Virtual Memory Manager}}},
   author = {Gorman, Mel},
+  year = {2004},
+  series = {Bruce {{Perens}}' {{Open Source}} Series},
+  publisher = {Prentice Hall},
+  address = {Upper Saddle River, NJ},
+  isbn = {978-0-13-145348-7},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/UXN3FUA6/Gorman - Understanding The Linux Virtual Memory Manager.pdf}
+  lccn = {QA76.9.V5 G67 2004},
+  keywords = {Linux,Virtual computer systems,Virtual storage (Computer science)},
+  file = {/Users/deppe/Zotero/storage/UR6DIY4A/Gorman - 2004 - Understanding the Linux Virtual Memory Manager.pdf}
 }
 
 @inproceedings{gugale_attc_2020,
@@ -319,12 +309,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3410463.3414653},
-  url = {https://dl.acm.org/doi/10.1145/3410463.3414653},
   urldate = {2024-04-24},
   abstract = {Heterogeneous memory systems are getting popular, however they face significant challenges from translation coherence overheads from page remappings. Translation coherence, which is typically implemented in software, can consume up to 50\% of the runtime for some applications in virtualized platforms. In this paper, we propose ATTC -- Addressable TLB-based Translation Coherence, a hardware translation coherence scheme which eliminates almost all of the overheads associated with software-based coherence mechanisms, and overcomes the challenges in existing hardware schemes. Unlike other proposals (HATRIC, UNITD) that require on-chip TLB tags to enforce coherence and are capable of tracking only the last level page table entries of either the guest or host page tables, ATTC tracks changes to both guest and host page tables without requiring any additional metadata in L1, L2 TLBs. ATTC enforces a "point of coherence'' uniformly for both guest and host page table updates using an addressable TLB (ATLB) in the DRAM akin to the one in [41]. An inverse mapping table (INVTBL - present in DRAM) that maps host physical pages to ATLB locations helps to precisely track translations. We study the proposed ATTC scheme in detail for an emerging hybrid memory organization (a mix of DRAM and NVM) and show that ATTC practically eliminates all translation coherence overheads, yielding an average improvement of 35.7\% over a baseline software coherence scheme in virtualized environment and 7.4\% over the hardware HATRIC scheme.},
   isbn = {978-1-4503-8075-1},
   keywords = {hybrid memory,tlb shootdown,translation coherence,virtualization},
-  file = {/home/deppe/Zotero/storage/N3IALK4L/Gugale et al. - 2020 - ATTC (@C) Addressable-TLB based Translation Coherence.pdf}
+  file = {/Users/deppe/Zotero/storage/N3IALK4L/Gugale et al. - 2020 - ATTC (@C) Addressable-TLB based Translation Coherence.pdf}
 }
 
 @article{guo_fast_2019,
@@ -334,7 +323,7 @@
   abstract = {Address translation and protection play important roles in today's processors, supporting multiprocessing and enforcing security. Historically, the design of the address translation mechanisms has been closely tied to the instruction set. In contrast, RISC-V defines its privileged specification in a way that permits a variety of designs. An important part of the design space is the organisation of Translation Lookaside Buffers (TLBs). This paper presents our recent work on simulating TLB behaviours in multi-core RISC-V systems1. Our TLB simulation framework allows rapid, flexible and versatile prototyping of various hardware TLB design choices, and enables validation, profiling and benchmarking of software running on RISC-V systems. We show how this framework can be integrated with the dynamic binary translated emulator QEMU to perform online simulation. When simulating complicated multi-level shared TLB designs, the framework runs at around 400 million instructions per second (MIPS) when simulating an 8-core system. The performance overhead compared to unmodified QEMU is only 18\% when the benchmark's L1 TLB miss rate is 1\%.},
   langid = {english},
   keywords = {global ASID},
-  file = {/home/deppe/Zotero/storage/57ZFVQWB/Guo and Mullins - 2019 - Fast TLB Simulation for RISC-V Systems.pdf}
+  file = {/Users/deppe/Zotero/storage/57ZFVQWB/Guo and Mullins - 2019 - Fast TLB Simulation for RISC-V Systems.pdf}
 }
 
 @misc{horn_project_2019,
@@ -344,9 +333,8 @@
   year = {2019},
   month = jan,
   journal = {Project Zero},
-  url = {https://googleprojectzero.blogspot.com/2019/01/taking-page-from-kernels-book-tlb-issue.html},
   urldate = {2024-04-24},
-  file = {/home/deppe/Zotero/storage/TWSP4GII/taking-page-from-kernels-book-tlb-issue.html}
+  file = {/Users/deppe/Zotero/storage/TWSP4GII/taking-page-from-kernels-book-tlb-issue.html}
 }
 
 @techreport{intel_corporation_remote_2021,
@@ -355,9 +343,8 @@
   year = {2021},
   month = jul,
   number = {341431-001US},
-  url = {https://www.intel.com/content/dam/develop/external/us/en/documents/341431-remote-action-request-white-paper.pdf},
   urldate = {2024-04-29},
-  file = {/home/deppe/Zotero/storage/MHGKBKBA/341431-remote-action-request-white-paper.pdf}
+  file = {/Users/deppe/Zotero/storage/MHGKBKBA/341431-remote-action-request-white-paper.pdf}
 }
 
 @inproceedings{jacob_look_1998,
@@ -371,11 +358,10 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/291069.291065},
-  url = {https://dl.acm.org/doi/10.1145/291069.291065},
   urldate = {2024-05-03},
   abstract = {Virtual memory is a staple in modem systems, though there is little agreement on how its functionality is to be implemented on either the hardware or software side of the interface. The myriad of design choices and incompatible hardware mechanisms suggests potential performance problems, especially since increasing numbers of systems (even embedded systems) are using memory management. A comparative study of the implementation choices in virtual memory should therefore aid system-level designers.This paper compares several virtual memory designs, including combinations of hierarchical and inverted page tables on hardware-managed and software-managed translation lookaside buffers (TLBs). The simulations show that systems are fairly sensitive to TLB size; that interrupts already account for a large portion of memory-management overhead and can become a significant factor as processors execute more concurrent instructions; and that if one includes the cache misses inflicted on applications by the VM system, the total VM overhead is roughly twice what was thought (10--20\% rather than 5--10\%).},
   isbn = {978-1-58113-107-9},
-  file = {/home/deppe/Zotero/storage/GJNC4G8D/Jacob and Mudge - 1998 - A look at several memory management units, TLB-refill mechanisms, and page table organizations.pdf}
+  file = {/Users/deppe/Zotero/storage/GJNC4G8D/Jacob and Mudge - 1998 - A look at several memory management units, TLB-refill mechanisms, and page table organizations.pdf}
 }
 
 @misc{kudla_bitcharmertlb_shootdowns_2024,
@@ -383,7 +369,6 @@
   author = {Kudla, Wojciech},
   year = {2024},
   month = apr,
-  url = {https://github.com/bitcharmer/tlb_shootdowns},
   urldate = {2024-04-22}
 }
 
@@ -399,12 +384,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3173162.3173198},
-  url = {https://dl.acm.org/doi/10.1145/3173162.3173198},
   urldate = {2024-04-19},
   abstract = {We propose LATR-lazy TLB coherence-a software-based TLB shootdown mechanism that can alleviate the overhead of the synchronous TLB shootdown mechanism in existing operating systems. By handling the TLB coherence in a lazy fashion, LATR can avoid expensive IPIs which are required for delivering a shootdown signal to remote cores, and the performance overhead of associated interrupt handlers. Therefore, virtual memory operations, such as free and page migration operations, can benefit significantly from LATR's mechanism. For example, LATR improves the latency of munmap() by 70.8\% on a 2-socket machine, a widely used configuration in modern data centers. Real-world, performance-critical applications such as web servers can also benefit from LATR: without any application-level changes, LATR improves Apache by 59.9\% compared to Linux, and by 37.9\% compared to ABIS, a highly optimized, state-of-the-art TLB coherence technique.},
   isbn = {978-1-4503-4911-6},
   keywords = {asynchrony,TLB,translation coherence},
-  file = {/home/deppe/Zotero/storage/9SXWBMG7/Kumar et al. - 2018 - LATR Lazy Translation Coherence.pdf}
+  file = {/Users/deppe/Zotero/storage/9SXWBMG7/Kumar et al. - 2018 - LATR Lazy Translation Coherence.pdf}
 }
 
 @article{li_leveraging_2012,
@@ -418,11 +402,10 @@
   pages = {49--52},
   issn = {1556-6064},
   doi = {10.1109/L-CA.2011.35},
-  url = {https://ieeexplore.ieee.org/document/6104029},
   urldate = {2024-05-30},
   abstract = {Traversing page table during virtual to physical address translation causes significant pipeline stalls when misses occur in the translation-lookaside buffer (TLB). To mitigate this penalty, we propose a fast, scalable, multi-level TLB organization that leverages page sharing behaviors and performs efficient TLB entry placement. Our proposed partial sharing TLB (PSTLB) reduces TLB misses by around 60\%. PSTLB also improves TLB performance by nearly 40\% compared to traditional private TLBs and 17\% over the state of the art scalable TLB proposal.},
   keywords = {Benchmark testing,CMPs,Fluids,Oceans,Partial Sharing,Prefetching,Runtime,Tiles,TLBs,Virtual private networks},
-  file = {/home/deppe/Zotero/storage/NIZ2BLFQ/6104029.html}
+  file = {/Users/deppe/Zotero/storage/NIZ2BLFQ/6104029.html}
 }
 
 @article{li_ps-tlb_2013,
@@ -437,11 +420,10 @@
   pages = {28:1--28:21},
   issn = {1544-3566},
   doi = {10.1145/2400682.2400687},
-  url = {https://dl.acm.org/doi/10.1145/2400682.2400687},
   urldate = {2024-05-30},
   abstract = {Traversing the page table during virtual to physical address translation causes pipeline stalls when misses occur in the translation-lookaside buffer (TLB). State-of-the-art translation proposals typically optimize a single aspect of translation performance (e.g., translation sharing, context switch performance, etc.) with potential trade-offs of additional hardware complexity, increased translation latency, or reduced scalability. In this article, we propose the partial sharing TLB (PS-TLB), a fast and scalable solution that reduces off-chip translation misses without sacrificing the timing-critical requirement of on-chip translation. We introduce the partial sharing buffer (PSB) which leverages application page sharing characteristics using minimal additional hardware resources. Compared to the leading TLB proposal that leverages sharing, PS-TLB provides a more than 45\% improvement in translation latency with a 9\% application speedup while using fewer storage resources. In addition, the page classification and PS-TLB architecture provide further optimizations including an over 30\% reduction of interprocessor interrupts for coherence, and reduced context switch misses with fewer resources compared with existing methods.},
   keywords = {Shared TLB,shootdown downgrade,tagged TLB,translation classification},
-  file = {/home/deppe/Zotero/storage/6F34PINP/Li et al. - 2013 - PS-TLB Leveraging page classification information for fast, scalable and efficient translation for.pdf}
+  file = {/Users/deppe/Zotero/storage/6F34PINP/Li et al. - 2013 - PS-TLB Leveraging page classification information for fast, scalable and efficient translation for.pdf}
 }
 
 @misc{linus_tech_tips_this_2023,
@@ -449,7 +431,6 @@
   author = {{Linus Tech Tips}},
   year = {2023},
   month = dec,
-  url = {https://www.youtube.com/watch?v=vaMxTSm53UU},
   urldate = {2024-04-26},
   abstract = {Your business deserves a website! Create one for free at https://odoo.com/LTT Who doesn't like a free CPU? The answer is a bit more complicated than you're imagining. This computer might look small and unassuming, but inside it is a motherboard you've never seen before, a 64-core processor unlike anything you currently own, and the technology behind it could have far reaching geopolitical implications in the very near future. It is the subject of trade sanctions, stock dumps, and could lead us into the next technology-fueled cold war. But can it game? Discuss on the forum: https://linustechtips.com/topic/15456... Check out the Milk-V Pioneer: https://milkv.io/pioneer Purchases made through some store links may provide some compensation to Linus Media Group. ► GET MERCH: https://lttstore.com ► GET EXCLUSIVE CONTENT ON FLOATPLANE: https://lmg.gg/lttfloatplane ► SPONSORS, AFFILIATES, AND PARTNERS: https://lmg.gg/partners ► EQUIPMENT WE USE TO FILM LTT: https://lmg.gg/LTTEquipment ► OUR WAN PODCAST GEAR: https://lmg.gg/wanset FOLLOW US  --------------------------------------------------- ~ Twitter: ~~/~linustech~~ Facebook: ~~/~linustech~~ Instagram: ~~/~linustech~~ TikTok: ~~/~linustech~~ Twitch: ~~/~linustech~~ MUSIC CREDIT --------------------------------------------------- Intro: Laszlo - Supernova Video Link: ~~~{$\bullet~$}[Electro]~-~Laszlo~-~Supernova~[Monst...~~ iTunes Download Link: https://itunes.apple.com/us/album/sup... Artist Link: ~~/~laszlomusic~~ Outro: Approaching Nirvana - Sugar High Video Link: ~~~{$\bullet~$}Sugar~High~-~Approaching~Nirvana~~ Listen on Spotify: http://spoti.fi/UxWkUw Artist Link: ~~~/~approachingnirvana~~ Intro animation by MBarek Abdelwassaa ~~/~mbarek\_abdel~~ Monitor And Keyboard by vadimmihalkevich / CC BY 4.0 ~https://geni.us/PgGWp Mechanical RGB Keyboard by BigBrotherECE / CC BY 4.0 https://geni.us/mj6pHk4 Mouse Gamer free Model By Oscar Creativo / CC BY 4.0 https://geni.us/Ps3XfE CHAPTERS --------------------------------------------------- 0:00 Intro 1:31 What is this thing? 2:37 What is an Instruction Set Architecture? 3:39 Using the Milk-V Pioneer 4:56 RISC vs CISC 5:55 ARM and RISC-V 6:28 Steam with box64 7:25 Why not just use ARM? 7:58 Looking at the hardware 9:52 Who is behind this CPU? 10:41 US vs China 12:03 What does it mean for gamers? 13:04 ARM's Race 14:49 Euro Truck Simulator 2 15:56 The Future/Conclusions}
 }
@@ -463,20 +444,18 @@
   pages = {92--97},
   issn = {2159-3477},
   doi = {10.1109/ISVLSI.2017.25},
-  url = {https://ieeexplore.ieee.org/document/7987501},
   urldate = {2024-06-18},
   abstract = {Many multicore and manycore architectures support hardware cache coherence. However, most of them rely on software techniques to maintain Translation Lookaside Buffer (TLB) coherence, namely the TLB shootdown routine, which is a costly procedure, known to be hardly scalable.The TSAR architecture is a manycore architecture including hardware TLB coherence, but in which the TLB coherence mechanism is tightly coupled to the cache coherence protocol, resulting in useless TLB invalidations. We propose to improve this existing TLB coherence scheme by adding a hardware module which allows separating data from metadata for cache lines containing address translation. This allows to eliminate the need to invalidate TLB entries when a line containing a translation is evicted from the L1 cache.Our solution does not modify the cache coherence protocol, does not increase the critical path in the L1 cache, and even results in little memory savings. Performance results show that our solution allows to eliminate from 90\% to 95\% of TLB scans operations, and from 50\% to 80\% of TLB flushes. This in turn results in an overall performance improvement of 5\% to 20\% of execution times on a 16-core architecture.},
   keywords = {Coherence,Computer architecture,Hardware,Hardware TLB Coherence,Manycore,Metadata,Operating systems,Program processors,Protocols,Scalability,TLB Flush,TLB Shootdown,Translation Lookaside Buffer},
-  file = {/home/deppe/Zotero/storage/EL49TEVC/Liu et al. - 2017 - Decoupling Translation Lookaside Buffer Coherence from Cache Coherence.pdf;/home/deppe/Zotero/storage/RJGE4GSW/7987501.html}
+  file = {/Users/deppe/Zotero/storage/EL49TEVC/Liu et al. - 2017 - Decoupling Translation Lookaside Buffer Coherence from Cache Coherence.pdf;/Users/deppe/Zotero/storage/RJGE4GSW/7987501.html}
 }
 
 @misc{lutomirski_re_2017,
   title = {Re: [{{PATCH}} v3 05/11] X86/Mm: {{Track}} the {{TLB}}'s Tlb\_gen and Update the Flushing Algorithm - {{Andy Lutomirski}}},
   author = {Lutomirski, Andy},
   year = {Thu, 22 Jun 2017 11:08:38 -0700},
-  url = {https://lore.kernel.org/linux-mm/CALCETrUbiXK8gjS=U2j4jW8YgPv4j+wgwsa4nJLnO+902fXfKQ@mail.gmail.com/},
   urldate = {2024-04-25},
-  file = {/home/deppe/Zotero/storage/4MDM2LKP/CALCETrUbiXK8gjS=U2j4jW8YgPv4j+wgwsa4nJLnO+902fXfKQ@mail.gmail.com.html}
+  file = {/Users/deppe/Zotero/storage/4MDM2LKP/CALCETrUbiXK8gjS=U2j4jW8YgPv4j+wgwsa4nJLnO+902fXfKQ@mail.gmail.com.html}
 }
 
 @article{maass_ecotlb_2020,
@@ -491,11 +470,10 @@
   pages = {27:1--27:24},
   issn = {1544-3566},
   doi = {10.1145/3409454},
-  url = {https://dl.acm.org/doi/10.1145/3409454},
   urldate = {2024-04-13},
   abstract = {We propose ecoTLB---software-based eventual translation lookaside buffer (TLB) coherence---which eliminates the overhead of the synchronous TLB shootdown mechanism in operating systems that use address space identifiers (ASIDs). With an eventual TLB coherence, ecoTLB improves the performance of free and page swap operations by removing the inter-processor interrupt (IPI) overheads incurred to invalidate TLB entries. We show that the TLB shootdown has implications for page swapping in particular in emerging, disaggregated data centers and demonstrate that ecoTLB can improve both the performance and the specific swapping policy decisions using ecoTLB's asynchronous mechanism. We demonstrate that ecoTLB improves the performance of real-world applications, such as Memcached and Make, that perform page swapping using Infiniswap, a solution for next generation data centers that use disaggregated memory, by up to 17.2\%. Moreover, ecoTLB improves the 99th percentile tail latency of Memcached by up to 70.8\% due to its asynchronous scheme and improved policy decisions. Furthermore, we show that recent features to improve security in the Linux kernel, like kernel page table isolation (KPTI), can result in significant performance overheads on architectures without support for specific instructions to clear single entries in tagged TLBs, falling back to full TLB flushes. In this scenario, ecoTLB is able to recover the performance lost for supporting KPTI due to its asynchronous shootdown scheme and its support for tagged TLBs. Finally, we demonstrate that ecoTLB improves the performance of free operations by up to 59.1\% on a 120-core machine and improves the performance of Apache on a 16-core machine by up to 13.7\% compared to baseline Linux, and by up to 48.2\% compared to ABIS, a recent state-of-the-art research prototype that reduces the number of IPIs.},
   keywords = {asynchrony,TLB,translation coherence},
-  file = {/home/deppe/Zotero/storage/XGTZ7FXJ/Maass et al. - 2020 - ECOTLB Eventually Consistent TLBs.pdf}
+  file = {/Users/deppe/Zotero/storage/XGTZ7FXJ/Maass et al. - 2020 - ECOTLB Eventually Consistent TLBs.pdf}
 }
 
 @misc{mark_dawson_jr_tlb_2021,
@@ -505,93 +483,90 @@
   year = {2021},
   month = oct,
   journal = {JabPerf Corp},
-  url = {https://www.jabperf.com/how-to-deter-or-disarm-tlb-shootdowns/},
   urldate = {2024-05-03},
   abstract = {When multithreaded apps meet multicore systems, TLB Shootdowns break out like it's the Old Wild West. Can we deter or disarm these outlaws?},
   langid = {american},
-  file = {/home/deppe/Zotero/storage/CXCXFR6I/how-to-deter-or-disarm-tlb-shootdowns.html}
+  file = {/Users/deppe/Zotero/storage/CXCXFR6I/how-to-deter-or-disarm-tlb-shootdowns.html}
 }
 
 @misc{nadav_rfc_2022,
   title = {[{{RFC PATCH}} 00/14] Mm: Relaxed {{TLB}} Flushes and Other Optimi. - {{Nadav Amit}}},
   author = {Nadav, Amit},
   year = {Mon, 18 Jul 2022 05:01:58 -0700},
-  url = {https://lore.kernel.org/lkml/20220718120212.3180-1-namit@vmware.com/},
   urldate = {2024-04-25},
-  file = {/home/deppe/Zotero/storage/RAVGKQBH/20220718120212.3180-1-namit@vmware.com.html}
+  file = {/Users/deppe/Zotero/storage/RAVGKQBH/20220718120212.3180-1-namit@vmware.com.html}
 }
 
 @misc{noauthor_cache_nodate,
   title = {Cache and {{TLB Flushing Under Linux}} --- {{The Linux Kernel}} Documentation},
-  url = {https://www.kernel.org/doc/html/latest/core-api/cachetlb.html},
   urldate = {2024-04-22},
-  file = {/home/deppe/Zotero/storage/ITMIP92A/cachetlb.html}
+  howpublished = {https://www.kernel.org/doc/html/latest/core-api/cachetlb.html},
+  file = {/Users/deppe/Zotero/storage/ITMIP92A/cachetlb.html}
 }
 
 @misc{noauthor_fwd_nodate,
   title = {Fwd: [{{RISC-V}}] [Tech-Privileged] {{Linux}} Uses of {{RSW}} Bits? - Johndeppe@gmail.Com - {{Gmail}}},
-  url = {https://mail.google.com/mail/u/0/#inbox/FMfcgzGxSlRpbCtkkZJKpPnhFRzdjxGg},
   urldate = {2024-04-26},
-  file = {/home/deppe/Zotero/storage/QSYDSIZG/0.html}
+  file = {/Users/deppe/Zotero/storage/QSYDSIZG/0.html}
 }
 
 @misc{noauthor_httpsmailgooglecommailu0inboxfmfcgzgxslrpbctkkzjkppnhfrzdjxgg_nodate,
   title = {{{https://mail.google.com/mail/u/0/\#inbox/FMfcgzGxSlRpbCtkkZJKpPnhFRzdjxGg}}},
-  url = {https://mail.google.com/mail/u/0/#inbox/FMfcgzGxSlRpbCtkkZJKpPnhFRzdjxGg},
-  urldate = {2024-04-17}
+  urldate = {2024-04-17},
+  howpublished = {https://mail.google.com/mail/u/0/\#inbox/FMfcgzGxSlRpbCtkkZJKpPnhFRzdjxGg}
 }
 
 @misc{noauthor_memory_nodate,
   title = {``{{Memory}} Directories'' in {{Intel}} Processors},
-  url = {https://sites.utexas.edu/jdm4372/2023/08/28/memory-directories-in-intel-processors/},
   urldate = {2024-04-22},
-  file = {/home/deppe/Zotero/storage/N66LZ35W/memory-directories-in-intel-processors.html}
+  howpublished = {https://sites.utexas.edu/jdm4372/2023/08/28/memory-directories-in-intel-processors/},
+  file = {/Users/deppe/Zotero/storage/N66LZ35W/memory-directories-in-intel-processors.html}
 }
 
 @misc{noauthor_patch_nodate,
   title = {[{{PATCH}} v6 0/9] X86/Tlb: {{Concurrent TLB}} Flushes},
-  url = {https://lore.kernel.org/lkml/20210220231712.2475218-4-namit@vmware.com/T/},
   urldate = {2024-04-29},
-  file = {/home/deppe/Zotero/storage/WL74HVXW/T.html}
+  howpublished = {https://lore.kernel.org/lkml/20210220231712.2475218-4-namit@vmware.com/T/},
+  file = {/Users/deppe/Zotero/storage/WL74HVXW/T.html}
 }
 
 @misc{noauthor_patch_nodate-1,
   title = {[{{PATCH}} 00/11] {{Add}} Support for the {{T-Head}} Vendor Extensions},
-  url = {https://lore.kernel.org/all/20220906122243.1243354-1-christoph.muellner@vrull.eu/T/},
   urldate = {2024-04-26},
-  file = {/home/deppe/Zotero/storage/PAMH9ZAD/T.html}
+  howpublished = {https://lore.kernel.org/all/20220906122243.1243354-1-christoph.muellner@vrull.eu/T/},
+  file = {/Users/deppe/Zotero/storage/PAMH9ZAD/T.html}
 }
 
 @misc{noauthor_re_nodate,
-  title = {Re: {{Are You Sure You Want}} to {{Use MMAP}} in {{Your Database Management System}}?},
-  shorttitle = {Re},
-  journal = {RavenDB NoSQL Database},
-  url = {https://ravendb.net/articles/re-are-you-sure-you-want-to-use-mmap-in-your-database-management-system},
-  urldate = {2024-04-18},
-  abstract = {Read about re: Are You Sure You Want to Use MMAP in Your Database Management System? on the RavenDB.net news section},
-  langid = {american},
-  file = {/home/deppe/Zotero/storage/38S3YAHP/re-are-you-sure-you-want-to-use-mmap-in-your-database-management-system.html}
+  title = {Re: [Tech-Privileged] [{{RFC PATCH V1}}] Riscv-Privileged: {{Add}} Broadcast Mode to Sfence.Vma - {{Benjamin Herrenschmidt}}},
+  urldate = {2024-04-26},
+  howpublished = {https://lore.kernel.org/linux-arm-kernel/f574fddf9b55884a168e186390018fbc32c776b2.camel@kernel.crashing.org/},
+  file = {/Users/deppe/Zotero/storage/FIQVS7LQ/f574fddf9b55884a168e186390018fbc32c776b2.camel@kernel.crashing.org.html}
 }
 
 @misc{noauthor_re_nodate-1,
-  title = {Re: [Tech-Privileged] [{{RFC PATCH V1}}] Riscv-Privileged: {{Add}} Broadcast Mode to Sfence.Vma - {{Benjamin Herrenschmidt}}},
-  url = {https://lore.kernel.org/linux-arm-kernel/f574fddf9b55884a168e186390018fbc32c776b2.camel@kernel.crashing.org/},
-  urldate = {2024-04-26},
-  file = {/home/deppe/Zotero/storage/FIQVS7LQ/f574fddf9b55884a168e186390018fbc32c776b2.camel@kernel.crashing.org.html}
+  title = {Re: {{Are You Sure You Want}} to {{Use MMAP}} in {{Your Database Management System}}?},
+  shorttitle = {Re},
+  journal = {RavenDB NoSQL Database},
+  urldate = {2024-04-18},
+  abstract = {Read about re: Are You Sure You Want to Use MMAP in Your Database Management System? on the RavenDB.net news section},
+  howpublished = {https://ravendb.net/articles/re-are-you-sure-you-want-to-use-mmap-in-your-database-management-system},
+  langid = {american},
+  file = {/Users/deppe/Zotero/storage/38S3YAHP/re-are-you-sure-you-want-to-use-mmap-in-your-database-management-system.html}
 }
 
 @misc{noauthor_riscv_nodate,
   title = {Riscv: {{ASID-related}} and {{UP-related TLB}} Flush Enhancements [{{LWN}}.Net]},
-  url = {https://lwn.net/Articles/949186/},
   urldate = {2024-04-24},
-  file = {/home/deppe/Zotero/storage/3MLZ73F2/949186.html}
+  howpublished = {https://lwn.net/Articles/949186/},
+  file = {/Users/deppe/Zotero/storage/3MLZ73F2/949186.html}
 }
 
 @misc{noauthor_riscv_nodate-1,
   title = {Riscv: {{Add}} Support for {{BATCHED}}\_{{UNMAP}}\_{{TLB}}\_{{FLUSH}} {$\cdot$} Torvalds/Linux@54d7431},
-  url = {https://github.com/torvalds/linux/commit/54d7431af73e2fa53b73cfeb2bec559c6664a4e4},
   urldate = {2024-04-24},
-  file = {/home/deppe/Zotero/storage/WD6HWEBW/54d7431af73e2fa53b73cfeb2bec559c6664a4e4.html}
+  howpublished = {https://github.com/torvalds/linux/commit/54d7431af73e2fa53b73cfeb2bec559c6664a4e4},
+  file = {/Users/deppe/Zotero/storage/WD6HWEBW/54d7431af73e2fa53b73cfeb2bec559c6664a4e4.html}
 }
 
 @inproceedings{ouyang_shoot4u_2016,
@@ -606,12 +581,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/2892242.2892245},
-  url = {https://dl.acm.org/doi/10.1145/2892242.2892245},
   urldate = {2024-04-26},
   abstract = {Virtual Machine based approaches to workload consolidation, as seen in IaaS cloud as well as datacenter platforms, have long had to contend with performance degradation caused by synchronization primitives inside the guest environments. These primitives can be affected by virtual CPU preemptions by the host scheduler that can introduce delays that are orders of magnitude longer than those primitives were designed for. While a significant amount of work has focused on the behavior of spinlock primitives as a source of these performance issues, spinlocks do not represent the entirety of synchronization mechanisms that are susceptible to scheduling issues when running in a virtualized environment. In this paper we address the virtualized performance issues introduced by TLB shootdown operations. Our profiling study, based on the PARSEC benchmark suite, has shown that up to 64\% of a VM's CPU time can be spent on TLB shootdown operations under certain workloads. In order to address this problem, we present a paravirtual TLB shootdown scheme named Shoot4U. Shoot4U completely eliminates TLB shootdown preemptions by invalidating guest TLB entries from the VMM and allowing guest TLB shootdown operations to complete without waiting for remote virtual CPUs to be scheduled. Our performance evaluation using the PARSEC benchmark suite demonstrates that Shoot4U can reduce benchmark runtime by up to 85\% compared an unmodified Linux kernel, and up to 44\% over a state-of-the-art paravirtual TLB shootdown scheme.},
   isbn = {978-1-4503-3947-6},
   keywords = {preemption,tlb shootdown,virtualization},
-  file = {/home/deppe/Zotero/storage/Z4XDNLMS/Ouyang et al. - 2016 - Shoot4U Using VMM Assists to Optimize TLB Operations on Preempted vCPUs.pdf}
+  file = {/Users/deppe/Zotero/storage/Z4XDNLMS/Ouyang et al. - 2016 - Shoot4U Using VMM Assists to Optimize TLB Operations on Preempted vCPUs.pdf}
 }
 
 @article{pham_tlb_2018,
@@ -625,11 +599,10 @@
   pages = {17--20},
   issn = {1556-6064},
   doi = {10.1109/LCA.2017.2712140},
-  url = {https://ieeexplore.ieee.org/document/7938603},
   urldate = {2024-04-29},
   abstract = {Power efficiency has become one of the most important design constraints for high-performance systems. In this paper, we revisit the design of low-power virtually-addressed caches. While virtually-addressed caches enable significant power savings by obviating the need for Translation Lookaside Buffer (TLB) lookups, they suffer from several challenging design issues that curtail their widespread commercial adoption. We focus on one of these challenges-cache flushes due to virtual page remappings. We use detailed studies on an ARM many-core server to show that this problem degrades performance by up to 25 percent for a mix of multi-programmed and multi-threaded workloads. Interestingly, we observe that many of these flushes are spurious, and caused by an indiscriminate invalidation broadcast on ARM architecture. In response, we propose a low-overhead and readily implementable hardware mechanism using bloom filters to reduce spurious invalidations and mitigate their ill effects.},
   keywords = {Benchmark testing,Coherence,Computer architecture,Hardware,Indexes,multicores,multiprogramming,multithreading,Registers,Servers,TLB,Virtual Cache,virtual memory},
-  file = {/home/deppe/Zotero/storage/NY9XJSVD/Pham et al. - 2018 - TLB Shootdown Mitigation for Low-Power Many-Core S.pdf;/home/deppe/Zotero/storage/R86NXQZN/7938603.html}
+  file = {/Users/deppe/Zotero/storage/NY9XJSVD/Pham et al. - 2018 - TLB Shootdown Mitigation for Low-Power Many-Core S.pdf;/Users/deppe/Zotero/storage/R86NXQZN/7938603.html}
 }
 
 @inproceedings{porter_decker_2023,
@@ -644,12 +617,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3575693.3575734},
-  url = {https://dl.acm.org/doi/10.1145/3575693.3575734},
   urldate = {2024-05-06},
   abstract = {Modern code reuse attacks take full advantage of bloated software. Attackers piece together short sequences of instructions in otherwise benign code to carry out malicious actions. Mitigating these reusable code snippets, known as gadgets, has become one of the prime focuses of attack surface reduction research. While some debloating techniques remove parts of software that contain such gadgets, other methods focus on making them unusable by breaking up chains of them, thereby substantially diminishing the possibility of code reuse attacks. Third-party libraries are another main focus, because they exhibit a high number of vulnerabilities, but recently, techniques have emerged that deal with whole applications. Attack surface reduction efforts have typically tried to eliminate such attacks by subsetting (debloating) the application, e.g. via user-specified inputs, configurations, or features to achieve high gadget reductions. However, such techniques suffer from the limitations of soundness, i.e. the software might crash during no-attack executions on regular inputs, or they may be conservative and leave a large amount of attack surface untackled. In this work we present a general, whole-program attack surface reduction technique called Decker that significantly reduces gadgets which are accessible to an attacker during an execution phase (called a deck) and has minor performance degradation. Decker requires no user inputs and leaves all features intact. It uses static analysis to determine key function sets that should be enabled/disabled at runtime. The runtime system then enables these function sets at the specified program points during execution. On SPEC CPU 2017, our framework achieves 73.2\% total gadget reduction with 5.2\% average slowdown. On 10 GNU coreutils applications, it achieves 87.2\% reduction and negligible slowdown. On the nginx server it achieves 80.3\% reduction with 2\% slowdown. We also provide a gadget chain-breaking case study, including detailed JOP gadget metrics on both Linux and Windows, and show that our framework breaks the shell-spawning chain in all cases.},
   isbn = {978-1-4503-9916-6},
   keywords = {program security,software debloating},
-  file = {/home/deppe/Zotero/storage/57SU4MH4/Porter et al. - 2023 - Decker Attack Surface Reduction via On-Demand Code Mapping.pdf}
+  file = {/Users/deppe/Zotero/storage/57SU4MH4/Porter et al. - 2023 - Decker Attack Surface Reduction via On-Demand Code Mapping.pdf}
 }
 
 @inproceedings{ram_trident_2021,
@@ -664,12 +636,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3466752.3480062},
-  url = {https://dl.acm.org/doi/10.1145/3466752.3480062},
   urldate = {2024-04-18},
   abstract = {Intel and AMD processors have long supported more than one large page sizes -- 1GB and 2MB, to reduce address translation overheads for applications with large memory footprints. However, previous works on large pages have primarily focused on 2MB pages, partly due to a lack of evidence on the usefulness of 1GB pages to real-world applications. Consequently, micro-architectural resources devoted to 1GB pages have gone underutilized for a decade. We quantitatively demonstrate where 1GB pages can be valuable, especially when employed in conjunction with 2MB pages. Unfortunately, the lack of application-transparent dynamic allocation of 1GB pages is to blame for the under-utilization of 1GB pages on today's systems. Toward this, we design and implement Trident in Linux to fully harness micro-architectural resources devoted for all page sizes in the current x86 hardware by transparently allocating 1GB, 2MB, and 4KB pages as suitable at runtime. Trident speeds up eight memory-intensive applications by 18\%, on average, over Linux's use of 2MB pages. We then propose Tridentpv, an extension to Trident that virtualizes 1GB pages via copy-less promotion and compaction in the guest OS. Overall, this paper shows that adequate software enablement brings practical relevance to even GB-sized pages, and motivates micro-architects to continue enhancing hardware support for all large page sizes.},
   isbn = {978-1-4503-8557-2},
   keywords = {large pages,page table walks,TLB,Virtual memory},
-  file = {/home/deppe/Zotero/storage/LWQR9MZ9/Ram et al. - 2021 - Trident Harnessing Architectural Resources for Al.pdf}
+  file = {/Users/deppe/Zotero/storage/LWQR9MZ9/Ram et al. - 2021 - Trident Harnessing Architectural Resources for Al.pdf}
 }
 
 @misc{rigtorp_latency_2020,
@@ -677,12 +648,12 @@
   author = {Rigtorp, Erik},
   year = {2020},
   month = jul,
-  url = {https://rigtorp.se/virtual-memory/},
   urldate = {2024-04-23},
   abstract = {This is a short guide describing the latency implications of the virtual memory abstraction.},
   chapter = {post},
+  howpublished = {https://rigtorp.se/virtual-memory/},
   langid = {american},
-  file = {/home/deppe/Zotero/storage/ZNMMYTTY/virtual-memory.html}
+  file = {/Users/deppe/Zotero/storage/ZNMMYTTY/virtual-memory.html}
 }
 
 @inproceedings{romanescu_unified_2010,
@@ -697,7 +668,7 @@
   doi = {10.1109/HPCA.2010.5416643},
   abstract = {We propose UNITD, a unified hardware coherence framework that integrates translation coherence into the existing cache coherence protocol. In UNITD coherence protocols, the TLBs participate in the cache coherence protocol just like the instruction and data caches, without requiring any changes to the existing coherence protocol. UNITD eliminates the need for the software TLB shootdown routine, a procedure known to be performance costly and non-scalable. We evaluate snooping and directory UNITD coherence protocols on multicore processors with 2-16 cores, and we demonstrate that UNITD reduces the performance penalty associated with TLB coherence to almost zero.},
   keywords = {Computer architecture,Hardware,Local activities,Memory management,Microarchitecture,Multicore processing,Multiprocessing systems,Protocols,Software maintenance,Software performance},
-  file = {/home/deppe/Zotero/storage/Q6IHEN2Q/Romanescu et al. - 2010 - UNified InstructionTranslationData (UNITD) coher.pdf;/home/deppe/Zotero/storage/3GEZA5ZK/5416643.html}
+  file = {/Users/deppe/Zotero/storage/Q6IHEN2Q/Romanescu et al. - 2010 - UNified InstructionTranslationData (UNITD) coher.pdf;/Users/deppe/Zotero/storage/3GEZA5ZK/5416643.html}
 }
 
 @inproceedings{schuh_cc-nic_2024,
@@ -713,18 +684,28 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3617232.3624868},
-  url = {https://dl.acm.org/doi/10.1145/3617232.3624868},
   urldate = {2024-05-06},
   abstract = {Emerging interconnects make peripherals, such as the network interface controller (NIC), accessible through the processor's cache hierarchy, allowing these devices to participate in the CPU cache coherence protocol. This is a fundamental change from the separate I/O data paths and read-write transaction primitives of today's PCIe NICs. Our experiments show that the I/O data path characteristics cause NICs to prioritize CPU efficiency at the expense of inflated latency, an issue that can be mitigated by the emerging low-latency coherent interconnects. But, the coherence abstraction is not suited to current host-NIC access patterns. Applying existing signaling mechanisms and data structure layouts in a cache-coherent setting results in extraneous communication and cache retention, limiting performance. Redesigning the interface is necessary to minimize overheads and benefit from the new interactions coherence enables. This work contributes CC-NIC, a host-NIC interface design for coherent interconnects. We model CC-NIC using Intel's Ice Lake and Sapphire Rapids UPI interconnects, demonstrating the potential of optimizing for coherence. Our results show a maximum packet rate of 1.5Gpps and 980Gbps packet throughput. CC-NIC has 77\% lower minimum latency, and 88\% lower at 80\% load, than today's PCIe NICs. We also demonstrate application-level core savings. Finally, we show that CC-NIC's benefits hold across a range of interconnect performance characteristics.},
   isbn = {9798400703720},
-  file = {/home/deppe/Zotero/storage/GJQKGGA8/Schuh et al. - 2024 - CC-NIC a Cache-Coherent Interface to the NIC.pdf}
+  file = {/Users/deppe/Zotero/storage/GJQKGGA8/Schuh et al. - 2024 - CC-NIC a Cache-Coherent Interface to the NIC.pdf}
+}
+
+@article{seong_tlb_2004,
+  title = {{{TLB Update-Hint}}: {{A Scalable TLB Consistency Algorithm}} for {{Cache-Coherent Non-uniform Memory Access Multiprocessors}}},
+  author = {Seong, Byeonghag and Kim, Donggook and Roh, Yangwoo and Park, Kyuho and Park, Deyeon},
+  year = {2004},
+  month = jul,
+  journal = {IEICE Transactions on Information and Systems},
+  volume = {E87-D},
+  number = {7},
+  pages = {1682--1692},
+  file = {/Users/deppe/Zotero/storage/2SHFKH6L/Seong et al. - 2004 - TLB Update-Hint A Scalable TLB Consistency Algorithm for Cache-Coherent Non-uniform Memory Access M.pdf}
 }
 
 @misc{sophgo_xuantie-c910-c920-usermanualpdf_nodate,
   title = {{{XuanTie-C910-C920-UserManual}}.Pdf},
   author = {{Sophgo}},
-  url = {https://github.com/sophgo/sophgo-doc/blob/e416164a90ab761ab2a6815244e09a06a1c0113c/SG2042/T-Head/XuanTie-C910-C920-UserManual.pdf},
-  file = {/home/deppe/Zotero/storage/SPN65JBR/XuanTie-C910-C920-UserManual.pdf}
+  file = {/Users/deppe/Zotero/storage/SPN65JBR/XuanTie-C910-C920-UserManual.pdf}
 }
 
 @misc{takao_indoh_patch_2019,
@@ -732,9 +713,8 @@
   author = {{Takao Indoh}},
   year = {2019},
   month = jun,
-  url = {https://lore.kernel.org/linux-arm-kernel/20191101172851.GC3983@willie-the-truck/T/},
   urldate = {2024-04-29},
-  file = {/home/deppe/Zotero/storage/A5748QF6/T.html}
+  file = {/Users/deppe/Zotero/storage/A5748QF6/T.html}
 }
 
 @incollection{teller_cost_1990,
@@ -747,13 +727,12 @@
   publisher = {Springer US},
   address = {Boston, MA},
   doi = {10.1007/978-1-4613-1537-7_1},
-  url = {https://doi.org/10.1007/978-1-4613-1537-7_1},
   urldate = {2022-10-05},
   abstract = {When paged virtual memory is supported as part of the memory hierarchy in a shared-memory multiprocessor system, translation-lookaside buffers (TLBs) are often used to cache copies of virtual-to-physical address translation information. This translation information is also stored in data structures called page tables. Since there can be multiple images of the translation information for a page accessible by processors, the modification of one image can result in inconsistency among the other images stored in TLBs and the page table. This TLB consistency problem can cause a processor to use stale translation information, which may result in incorrect program execution.},
   isbn = {978-1-4613-1537-7},
   langid = {english},
   keywords = {Memory Hierarchy,Multiprocessor System,Network Traffic,Page Fault,Virtual Memory},
-  file = {/home/deppe/Zotero/storage/QDYWTCAZ/Teller - 1990 - The Cost of TLB Consistency.pdf}
+  file = {/Users/deppe/Zotero/storage/QDYWTCAZ/Teller - 1990 - The Cost of TLB Consistency.pdf}
 }
 
 @misc{torvalds_linus_2015,
@@ -761,9 +740,8 @@
   author = {Torvalds, Linus},
   year = {2015},
   month = jul,
-  url = {https://sourceware.org/legacy-ml/libc-alpha/2015-07/msg00563.html},
   urldate = {2024-06-26},
-  file = {/home/deppe/Zotero/storage/BA68IU56/msg00563.html}
+  file = {/Users/deppe/Zotero/storage/BA68IU56/msg00563.html}
 }
 
 @phdthesis{torvalds_linux_1997,
@@ -774,7 +752,7 @@
   langid = {english},
   school = {University of Helsinki},
   keywords = {IT-vetenskaper},
-  file = {/home/deppe/Zotero/storage/EVYPVXVJ/Torvalds - Linux a Portable Operating System.pdf}
+  file = {/Users/deppe/Zotero/storage/EVYPVXVJ/Torvalds - Linux a Portable Operating System.pdf}
 }
 
 @article{veytsman_latex_nodate,
@@ -782,7 +760,7 @@
   author = {Veytsman, Boris},
   abstract = {This package provides a class for typesetting publications of the Association for Computing Machinery.},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/8B3AH4SV/Veytsman - LaTeX Class for the Association for Computing Mach.pdf}
+  file = {/Users/deppe/Zotero/storage/8B3AH4SV/Veytsman - LaTeX Class for the Association for Computing Mach.pdf}
 }
 
 @inproceedings{villavieja_didi_2011,
@@ -797,7 +775,7 @@
   doi = {10.1109/PACT.2011.65},
   abstract = {Translation Look aside Buffers (TLBs) are ubiquitously used in modern architectures to cache virtual-to-physical mappings and, as they are looked up on every memory access, are paramount to performance scalability. The emergence of chip-multiprocessors (CMPs) with per-core TLBs, has brought the problem of TLB coherence to front stage. TLBs are kept coherent at the software-level by the operating system (OS). Whenever the OS modifies page permissions in a page table, it must initiate a coherency transaction among TLBs, a process known as a TLB shoot down. Current CMPs rely on the OS to approximate the set of TLBs caching a mapping and synchronize TLBs using costly Inter-Proceessor Interrupts (IPIs) and software handlers. In this paper, we characterize the impact of TLB shoot downs on multiprocessor performance and scalability, and present the design of a scalable TLB coherency mechanism. First, we show that both TLB shoot down cost and frequency increase with the number of processors and project that software-based TLB shoot downs would thwart the performance of large multiprocessors. We then present a scalable architectural mechanism that couples a shared TLB directory with load/store queue support for lightweight TLB invalidation, and thereby eliminates the need for costly IPIs. Finally, we show that the proposed mechanism reduces the fraction of machine cycles wasted on TLB shoot downs by an order of magnitude.},
   keywords = {Benchmark testing,Coherence,Hardware,Linux,Memory management,Scalability,Shared TLB,Shootdown characterization,Software,TLB Shootdown},
-  file = {/home/deppe/Zotero/storage/36SVPL37/Villavieja et al. - 2011 - DiDi Mitigating the Performance Impact of TLB Sho.pdf;/home/deppe/Zotero/storage/3W9AUSR7/Villavieja et al. - 2011 - DiDi Mitigating the Performance Impact of TLB Sho.pdf;/home/deppe/Zotero/storage/GU2S5NP6/stamp.html}
+  file = {/Users/deppe/Zotero/storage/36SVPL37/Villavieja et al. - 2011 - DiDi Mitigating the Performance Impact of TLB Sho.pdf;/Users/deppe/Zotero/storage/3W9AUSR7/Villavieja et al. - 2011 - DiDi Mitigating the Performance Impact of TLB Sho.pdf;/Users/deppe/Zotero/storage/GU2S5NP6/stamp.html}
 }
 
 @article{wong_tlb_2015,
@@ -805,10 +783,9 @@
   author = {Wong, Henry},
   year = {2015},
   month = aug,
-  url = {https://blog.stuffedcow.net/2015/08/pagewalk-coherence/},
   urldate = {2024-04-22},
   langid = {american},
-  file = {/home/deppe/Zotero/storage/E344IKND/pagewalk-coherence.html}
+  file = {/Users/deppe/Zotero/storage/E344IKND/pagewalk-coherence.html}
 }
 
 @misc{wong_windows_2015,
@@ -816,9 +793,9 @@
   author = {Wong, Henry},
   year = {2015},
   month = aug,
-  url = {https://blog.stuffedcow.net/2015/08/win9x-tlb-invalidation-bug/},
   urldate = {2024-04-29},
-  file = {/home/deppe/Zotero/storage/RICVUURU/win9x-tlb-invalidation-bug.html}
+  howpublished = {https://blog.stuffedcow.net/2015/08/win9x-tlb-invalidation-bug/},
+  file = {/Users/deppe/Zotero/storage/RICVUURU/win9x-tlb-invalidation-bug.html}
 }
 
 @inproceedings{xu_towards_2022,
@@ -831,13 +808,12 @@
   publisher = {IEEE},
   address = {Chicago, IL, USA},
   doi = {10.1109/MICRO56248.2022.00080},
-  url = {https://ieeexplore.ieee.org/document/9923860/},
   urldate = {2024-05-06},
   abstract = {While research has shown that the agile chip design methodology is promising to sustain the scaling of computing performance in a more efficient way, it is still of limited usage in actual applications due to two major obstacles: 1) Lack of tool-chain and developing framework supporting agile chip design, especially for large-scale modern processors. 2) The conventional verification methods are less agile and become a major bottleneck of the entire process. To tackle both issues, we propose MINJIE, an open-source platform supporting agile processor development flow. MINJIE integrates a broad set of tools for logic design, functional verification, performance modelling, pre-silicon validation and debugging for better development efficiency of state-of-the-art processor designs. We demonstrate the usage and effectiveness of MINJIE by building two generations of an open-source superscalar out-oforder RISC-V processor code-named XIANGSHAN using agile methodologies. We quantify the performance of XIANGSHAN using SPEC CPU2006 benchmarks and demonstrate that XIANGSHAN achieves industry-competitive performance.},
   copyright = {https://doi.org/10.15223/policy-029},
   isbn = {978-1-66546-272-3},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/H7JYCL8B/Xu et al. - 2022 - Towards Developing High Performance RISC-V Processors Using Agile Methodology.pdf}
+  file = {/Users/deppe/Zotero/storage/H7JYCL8B/Xu et al. - 2022 - Towards Developing High Performance RISC-V Processors Using Agile Methodology.pdf}
 }
 
 @inproceedings{yadalam_bypassd_2024,
@@ -853,12 +829,11 @@
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
   doi = {10.1145/3617232.3624854},
-  url = {https://dl.acm.org/doi/10.1145/3617232.3624854},
   urldate = {2024-05-09},
   abstract = {Modern storage devices, such as Optane NVMe SSDs, offer ultra-low latency of a few microseconds and high bandwidth of multiple gigabytes per second. At these speeds, the kernel software I/O stack is a substantial source of overhead. Userspace approaches avoid kernel software overheads but face challenges in supporting shared storage without major changes to file systems, the OS or the hardware. We propose a new I/O architecture, BypassD, for fast, userspace access to shared storage devices. BypassD takes inspiration from virtual memory: it uses virtual addresses to access a device and relies on hardware for translation and protection. Like memory-mapping a file, the OS kernel constructs a mapping for file contents in the page table. Userspace I/O requests then use virtual addresses from these mappings to specify which file and file offset to access. BypassD extends the IOMMU hardware to translate file offsets into device Logical Block Addresses. Existing applications require no modifications to use BypassD. Our evaluation shows that BypassD reduces latency for 4KB accesses by 42\% compared to standard Linux kernel and performs close to userspace techniques like SPDK that do not support device sharing. By eliminating software overheads, BypassD improves performance of real workloads, such as the WiredTiger storage engine, by {\textasciitilde}20\%.},
   isbn = {9798400703720},
   keywords = {direct access,I/O performance,low latency,sharing,SSD,storage systems,userspace},
-  file = {/home/deppe/Zotero/storage/NEUSJN3I/Yadalam et al. - 2024 - BypassD Enabling fast userspace access to shared SSDs.pdf}
+  file = {/Users/deppe/Zotero/storage/NEUSJN3I/Yadalam et al. - 2024 - BypassD Enabling fast userspace access to shared SSDs.pdf}
 }
 
 @inproceedings{yan_hardware_2017,
@@ -871,10 +846,9 @@
   publisher = {ACM},
   address = {Toronto ON Canada},
   doi = {10.1145/3079856.3080211},
-  url = {https://dl.acm.org/doi/10.1145/3079856.3080211},
   urldate = {2022-10-27},
   abstract = {To improve system performance, operating systems (OSes) often undertake activities that require modification of virtual-to-physical address translations. For example, the OS may migrate data between physical pages to manage heterogeneous memory devices. We refer to such activities as page remappings. Unfortunately, page remappings are expensive. We show that a big part of this cost arises from address translation coherence, particularly on systems employing virtualization. In response, we propose hardware translation invalidation and coherence or HATRIC, a readily implementable hardware mechanism to piggyback translation coherence atop existing cache coherence protocols. We perform detailed studies using KVM-based virtualization, showing that HATRIC achieves up to 30\% performance and 10\% energy benefits, for per-CPU area overheads of 0.2\%. We also quantify HATRIC's benefits on systems running Xen and find up to 33\% performance improvements.},
   isbn = {978-1-4503-4892-8},
   langid = {english},
-  file = {/home/deppe/Zotero/storage/UT6X5GB5/Yan et al. - 2017 - Hardware Translation Coherence for Virtualized Sys.pdf}
+  file = {/Users/deppe/Zotero/storage/UT6X5GB5/Yan et al. - 2017 - Hardware Translation Coherence for Virtualized Sys.pdf}
 }
