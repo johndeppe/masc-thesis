@@ -9,22 +9,166 @@
 	---~Captain Gabriel Lorca, Star Trek: Discovery
 \end{epigraph}
 
-TLB coherence has been a thorn in the side of OS writers since the TLB was invented. Patricia Teller outlines the problem nicely, which is that computer manufacturers of the 80s found TLB coherence to be too expensive, and delegated the problem to software. \cite{teller_cost_1990}. \textit{TLB Shootdown}~\cite{black_translation_1989} has become the industry-standard procedure to maintain TLB coherence in popular multi-core architectures including x86, ARM, and RISC-V.
+The virtual memory abstraction provides processes with large private address spaces, creating process isolation and benefiting programmer productivity. However, today's page-based virtual memory suffers because the \ac{TLB}s that cache address translations are limited in size by power and timing concerns. This size limitation in turn limits the amount of memory that \ac{TLB}s can cover with their cached translations, called \ac{TLB} reach.
+
+A TLB miss occurs when a processor attempts to translate a virtual address not present in its TLB. Retrieving a translation from memory to resolve a TLB miss by walking page tables requires sequentially dependent memory accesses, some elided by caches. Virtualized systems with nested paging suffer from requiring 2-dimensional translation of guest virtual addresses to guest physical addresses and then to host physical addresses with many sequential memory accesses. Mitigating the long latency of 2-dimensional page walks is an active area of research \cite{gandhi_efficient_2014, teabe_nocompromis_2021, bergman_translation_2023}.
+
+Superpages of 2 MB and 1 GB  help the x86-64 and RISC-V architectures increase TLB reach, but this point in the design space still suffers for workloads like graph analytics randomly addressing large memories \cite{manocha_implications_2022}. For example, the AMD Zen 4 caches 1 GB page translations in its per-core 72-entry L1 data TLB and also in its shared 64-entry Page Directory Cache. Thus, a Zen 4 core has an maximum data TLB reach of approximately 136 GB to cover a maximum 6 TB of attached DRAM. \cite{advanced_micro_devices_software_2023}.
+
+
+The Sv39 page table entry is Figure \ref{sv39pte}.qs
+
+\begin{figure}
+	\begin{bytefield}[bitwidth=1.1em]{44}
+		\bytefieldsetup{bitheight=0.8em}
+		\bitbox[]{1}{\footnotesize{64}}
+		\bitbox[]{1}{\footnotesize{63}}
+		\bitbox[]{1}{\footnotesize{62}}
+		\bitbox[]{1}{\footnotesize{61}}
+		\bitbox[]{5}{}
+		\bitbox[]{1}{\footnotesize{54}}
+		\bitbox[]{1}{\footnotesize{53}}
+		\bitbox[]{6}{}
+		\bitbox[]{1}{\footnotesize{28}}
+		\bitbox[]{1}{\footnotesize{27}}
+		\bitbox[]{6}{}
+		\bitbox[]{1}{\footnotesize{19}}
+		\bitbox[]{1}{\footnotesize{18}}
+		\bitbox[]{6}{}
+		\bitbox[]{1}{\footnotesize{10}}
+		\bitbox[]{1}{\footnotesize{9}}
+		\bitbox[]{1}{\footnotesize{8}}
+		\bitbox[]{1}{\footnotesize{7}}
+		\bitbox[]{1}{\footnotesize{6}}
+		\bitbox[]{1}{\footnotesize{5}}
+		\bitbox[]{1}{\footnotesize{4}}
+		\bitbox[]{1}{\footnotesize{3}}
+		\bitbox[]{1}{\footnotesize{2}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{0}}
+		\\
+		\bytefieldsetup{bitheight=1.2em}
+		\bitbox{1}{N}
+		\bitbox{2}{\scriptsize{PBMT}}
+		\bitbox{7}{\textit{Reserved}}
+		\bitbox{8}{PPN[2]}
+		\bitbox{8}{PPN[1]}
+		\bitbox{8}{PPN[0]}
+		\bitbox{2}{RSW}
+		\bitbox{1}{D}
+		\bitbox{1}{A}
+		\bitbox{1}{G}
+		\bitbox{1}{U}
+		\bitbox{1}{X}
+		\bitbox{1}{W}
+		\bitbox{1}{R}
+		\bitbox{1}{V}
+		\\
+		\bytefieldsetup{bitheight=0.8em}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{2}{\footnotesize{2}}
+		\bitbox[]{7}{\footnotesize{7}}
+		\bitbox[]{8}{\footnotesize{26}}
+		\bitbox[]{8}{\footnotesize{9}}
+		\bitbox[]{8}{\footnotesize{9}}
+		\bitbox[]{2}{\footnotesize{2}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+		\bitbox[]{1}{\footnotesize{1}}
+	\end{bytefield}
+	\vspace{-.15in}
+	\caption{Sv39 page table entry format}
+	\label{sv39pte}
+\end{figure}
+
+\section{Virtual Memory}
+
+What's virtual memory? Why is it useful?
+
+What overheads does virtual memory create?
+
+How does virtual memory enable hypervisors and what additional overhead is there?
+
+Demand paging and lazy allocation, how consolidating demand-allocated small pages to hugepages works
 
 Page tables are typically multi-level radix trees, but other organizations are also used~\cite{jacob_look_1998}. Linux's design uses radix page tables as a unifying approach to managing virtual memory across architectures~\cite{torvalds_linux_1997}.
 
-POWER, ARM, and some RISC-V vendor extensions have inter-core TLB invalidations that don't require IPIs. IPIs create undesirable overhead but even ARM's hardware shootdown can suffer by broadcasting to uninvolved cores~\cite{takao_indoh_patch_2019}.
+\subsubsection{Copy-on-Write}
+Copy-on-write is a common operating system technique that hemmed pages benefits with efficient page fracturing. Instead of copying an entire 2 MiB page to modify a small part, a typical approach is to fracture the 2 MiB page and only copy the relatively-small written region, allowing the unmodified areas to remain shared.
 
-Intel has recently implemented a hardware TLB invalidation~\cite{intel_corporation_remote_2021} but nobody is using it anywhere as far as I can tell?
+\section{Translation Lookaside Buffers}
+
+\subsection{TLB Coherence}
+
+Why have TLBs? Why is TLB coherence a problem? What specific overheads does maintaining TLB coherence create?
+
+TLB coherence has been a thorn in the side of OS writers since the TLB was invented~\cite{kilburn_one_1962}.
+
+Patricia Teller outlines the problem nicely, which is that computer manufacturers of the 80s found TLB coherence to be too expensive, and delegated the problem to software. \cite{teller_cost_1990}. \textit{TLB Shootdown}~\cite{black_translation_1989} has become the industry-standard procedure to maintain TLB coherence in popular multi-core architectures including x86, ARM, and RISC-V.
+
+TLB hardware, lookup by VA and PA, how TLB size is limited by area and power concerns and why locality encourages hierarchical caching
+
+radix trees and hugepages
+
+\subsubsection{Microarchitecture: TLB Hit Detection}
+
+TLB hits are typically detected by a content-associative memory (CAM) comparing incoming memory reference VPNs to stored translations' VPNs. Upon match, the PPN stored alongside the matching VPN is used for translation. However, NAPOT and hemmed pages' VPNs and offsets have variable bit-length, making the comparison task more complex.
+
+POWER, ARM, and some RISC-V vendor extensions have inter-core TLB invalidations that don't require IPIs. IPIs create undesirable overhead but even ARM's hardware shootdown can suffer by broadcasting to uninvolved cores~\cite{takao_indoh_patch_2019}.
 
 With virtualization and hypervisors, maintaining TLB coherence has become complex.
 
 ASIDs, page permissions, weak memory models and races.
 
-TLB shootdowns lead to latency spikes and jitter, \cite{rigtorp_latency_2020, gallenmuller_ducked_2021, gallenmuller_how_2022}. Such latencies present limiting design concerns for systems that oversubscribe memory, including databases~\cite{crotty_are_2022} and fine-grained protection \cite{porter_decker_2023}.
-
 The complex interface leads to operating system bugs~\cite{wong_tlb_2015}, including critical vulnerabilities~\cite{horn_project_2019}.
 
 RISC-V is still emerging, the Svvptc extension lets many sfence.vma instructions be elided~\cite{ghiti_patch_2024}. There's also Svadu and Svinval. Confusing! I'll have to write more about how RISC-V transistency works.
+
+\subsection{Related Work}
+
+Intel has recently implemented a hardware TLB invalidation~\cite{intel_corporation_remote_2021} but nobody is using it anywhere as far as I can tell?
+
+Radix tree alternatives 
+
+Mosaic Pages and Utopia increase TLB reach by reducing virtual memory associativity, saving TLB bits per-entry and allowing more TLB entries overall without relying on contiguity as large pages do \cite{gosakan_mosaic_2023, kanellopoulos_utopia_2023}. Like large pages, they suffer from unsolved operating system complexities, but do benefit from making simple 4 KiB pages more efficient. Midgard introduces another layer of translation between virtual and physical addresses, which benefits cache tagging and sharing \cite{gupta_rebooting_2021}. It is orthogonal to Hemmed Pages, but Hemmed Page's flexible mapping sizes may benefit Midgard systems.
+
+
+\section{Related \& Future Work}
+
+By evaluating eager paging we avoid the question of trading cold memory bloat for fewer page walks by always choosing bloat. Future study must evaluate that tradeoff under demand paging before NAPOT or hemmed pages will win wide adoption. However, 64 KiB large pages are winning significant hardware support despite the software challenges not being entirely solved \cite{talluri_surpassing_1994, sites_larger_2022, psomadakis_transparent_2023} because of convincing filesystem performance benefits in areas such as Linux page cache read-ahead \cite{wilcox_large_2020}.
+
+Mosaic Pages and Utopia increase TLB reach by reducing virtual memory associativity, saving TLB bits per-entry and allowing more TLB entries overall without relying on contiguity as large pages do \cite{gosakan_mosaic_2023, kanellopoulos_utopia_2023}. Like large pages, they suffer from unsolved operating system complexities, but do benefit from making simple 4 KiB pages more efficient. Midgard introduces another layer of translation between virtual and physical addresses, which benefits cache tagging and sharing \cite{gupta_rebooting_2021}. It is orthogonal to Hemmed Pages, but Hemmed Page's flexible mapping sizes may benefit Midgard systems.
+
+\subsection{Memory Management}
+
+Demand paging introduces many page faults, which add undesirable latency. Increasing that latency with complex decisions, such as which of many available page sizes to allocate, makes ensuring that operating systems have such decision-making information and architectural support more valuable \cite{lee_case_2020, tirumalasetty_reducing_2022, manocha_architectural_2023}. However, what architectural support will be effective depends upon the system's superpage and fragmentation management \cite{kwon_coordinated_2016, panwar_making_2018, panwar_hawkeye_2019, zhu_comprehensive_2020, zhou_impact_2023, yan_nimble_2019}, and application behaviors \cite{hunter_beyond_2021, alverti_daxvm_2022, manocha_implications_2022}.
+
+Contiguity creation and maintenance is required for large page schemes to work beyond initial boot-time allocations, when external fragmentation has set in. Illuminator \cite{panwar_making_2018} and Contiguitas \cite{zhao_contiguitas_2023} mitigate the fragmentation impact of unmovable allocations such as network buffers. Memory compaction \cite{corbet_memory_2010} and Translation Ranger \cite{yan_translation_2019} provide new contiguity after fragmentation.
+
+Large memory mappings can decrease the amount of information available to the operating system for making paging decisions. The dirty and accessed PTE bits are used to make flushing and compaction decisions, and growing their granularity with page size reduces the operating system's knowledge about what memory is cold or dirty. Techniques to increase the granularity of access and dirty information maintained for large pages will help mitigate some of the drawbacks that have hampered large page use \cite{ausavarungnirun_prism_2020}. One such opportunity is independently updating each of the existing dirty and accessed bits in Svnapot's redundant PTEs despite coalescing their associated TLB entries. Another is augmenting the TLB coherence interface with new instructions or snooping to improve page fault decision-making and TLB shootdown performance.
+
+\subsection{Nested Paging \& Virtualization}
+
+High virtualization overheads incurred by nested paging provide motivation for virtual memory improvements. Using direct segments has been proposed to reduce virtual machine address translation overhead by eliding one or both dimensions of a nested page walk \cite{gandhi_efficient_2014, teabe_nocompromis_2021}. Hemmed pages can substitute for direct segments in a straightforward way to provide the same overhead-reducing benefits.
+
+RISC-V ratified an extension for hypervisors in November 2021, and researchers have extended the open-source Rocket and CVA6 cores with support \cite{sa_first_2022, sa_cva6_2023}. However, the software ecosystem remains immature and actual silicon supporting the hypervisor extension is not readily available today. The RISC-V IOMMU virtualization extension to accompany hypervisors is also not yet ratified, making this avenue of research less straightforward.
+
+Another possibility would be to apply NAPOT or hemmed pages to translation pass-through \cite{bergman_translation_2023}, which decreases virtual machine address translation overhead by using a host frame permission table to maintain isolation while allowing guests to directly map host physical addresses. RISC-V's existing Physical Memory Protection feature is an appropriate host frame permission table starting point.
+
+\subsection{CMOS Design \& Power Consumption}
+
+We plan to perform CMOS layout of a hemmed pages TLB and then confirm our power estimates with iso-area and iso-energy comparisons between baseline RISC-V pages, 64 KiB pages, NAPOT pages, and hemmed pages.
+
+TCAM uses 2 SRAM cells for each bit to allow the Don't Care state \cite{pagiamtzis_content-addressable_2006}, which is more flexibility than hemmed pages require. We may be able to find more efficient structures for our TLB's CAM \cite{hanzawa_dynamic_2004, hanzawa_large-scale_2005} than the traditional 2 SRAM cells per TCAM bit, as the low address bits we set Don't Care for are adjacent. For example, it may be more area- or power-efficient to store PSIZE alongside VPN and HEM for translation, and then mask the low bits of incoming memory references for matching with non-ternary single-cell CAM.
+
+
+\subsubsection{Work enabled by TLB coherence improvements}
+
+TLB shootdowns lead to latency spikes and jitter, \cite{rigtorp_latency_2020, gallenmuller_ducked_2021, gallenmuller_how_2022}. Such latencies present limiting design concerns for systems that oversubscribe memory, including databases~\cite{crotty_are_2022} and fine-grained protection \cite{porter_decker_2023}.
 
 \endinput
