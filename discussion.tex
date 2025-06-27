@@ -9,6 +9,8 @@
 	---~Harry Tuttle, Brazil
 \end{epigraph}
 
+The as-delivered Milk-V Pioneer's `perf` did not support the RISC-V SBI's firmware TLB shootdown event counting.
+
 \section{Benchmarks}
 
 page-unmapping microbenchmark
@@ -42,7 +44,14 @@ ATTC~\cite{gugale_attc_2020} manages shootdowns from both guests and hosts by us
 
 \textbf{etc:} CC-NIC provides reduces NIC latency with cache-coherence~\cite{schuh_cc-nic_2024}. The producer-consumer workload of NICs presents another case where write-updates might be useful.
 
+Faster virtual memory coherence actions enable mechanism that rely on page (re)mapping like Decker: \url{https://dl.acm.org/doi/abs/10.1145/3575693.3575734}
+
 \section{Future Work}
+
+\begin{epigraph}
+	\emph{Technological advance is an inherently iterative process. One does not simply take sand from the beach and produce a Dataprobe. We use crude tools to fashion better tools, and then our better tools to fashion more precise tools, and so on. Each minor refinement is a step in the process, and all of the steps must be taken.}\\
+	---~Chairman Sheng-ji Yang, "Looking God in the Eye"
+\end{epigraph}
 
 TLB evictions can also be useful for predicting cacheline deadness. If a cacheline doesn't have any translations present in the TLB, is it likely dead? Not if you're just invalidating to change permissions, but otherwise probably yes. Write-updates clarify that and potentially make TLB-presence a more-useful deadness prediction factor. KPTI is a potential hazard here. What's the through-line on old TLB research \cite{clark_performance_1985} wondering if we should keep system pages vs. KPTI, I wonder?
 

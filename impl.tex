@@ -9,22 +9,39 @@
 	---~Wyatt Earp, Tombstone
 \end{epigraph}
 
-Inspired by ABIS \cite{amit_optimizing_2017}, we base our efforts on the Linux kernel.
+We'd like to make the TLB maintenance process simpler for the systems programmer, as it is described as a substantial difficulty by new OS writers \cite{boos_theseus_2022} and (how do I cite Email with Boos and talking to Twizzler author Daniel Bittman in Margo's CPSC 509? I need to find the date probably.) BypassD-style systems \cite{yadalam_bypassd_2024} make this even more important if filesystems become integrated into the translation process.
 
-For a process of interest, selected at process initialization with a flag
+\section{Tracking with Software-loaded TLB}
 
-(TODO: How? \verb+prctl()+? Is there a better way? I don't want to have to flush a bunch of TLBs to set this mode, but I guess that's probably the right thing to do. Yuck. Maybe let's push it down to the VMA-level and set it with madvise()?)
+Inspired by ABIS's observation that an operating system can track which processor cores have a particular \ac{PTE} cached in its \ac{TLB}s and then use that tracking to reduce TLB shootdown overheads\cite{amit_optimizing_2017}, we add an madvise() to Linux that allows a user program to designate a region of virtual memory for such tracking.
+
+Recall from Section TODO REFERENCE that ABIS performs shenanigans with address spaces to foil the hardware page walker and instead fault when accessing regions of interest. We seek to ameliorate this substantial overhead. Recognizing that only some memory regions in a program will likely have sparse access, we only track regions designated by the programmer. Future systems could automate this in with profiling similar to Linux's NUMA migration. Our software-loaded TLB entries could be used in the NUMA case where Linux wants to extend their profiling, even. (advocacy for software-loadable TLBs?)
+
+We accomplish the tracking by invalidating \ac{PTE}s, so that the hardware page walker will now produce a page fault instead of simply filling the \ac{TLB}.
 
 we'll allocate PTEs with extra space for a cpumask that tracks cores have that PTE in their TLB. (TODO: Where do these PTEs go? When do they get allocated?)
 
 We detect TLB presence by avoiding the hardware page table walker. The process of interest gets an empty satp entry, so all page walks will fault. When we fault, we use c920's TLB-manipulation registers to insert the appropriate TLB entry and then mark the appropriate cpumask. We can then also clear the cpumask of the evicted entry, which also appears in the TLB-manipulation registers.
 
+\subsection{cpumask allocation}
+
+We initially thought aobut putting these things in empty PTE bits, but we didn't have space in the PTEs.
+
 definitely have to hack {pagetable\_alloc()} \url{https://github.com/johndeppe/linux-riscv/blob/eadff10a39c6faf2e486ed108e3a3bc4c2bb77b3/include/linux/mm.h#L2851}
+
+ugh, do I reallocate a page table? no, that means I need to take new pages. let's stick to kmalloc.
+
+After that, I wanted to kmalloc them into arrays that would merge and split with VMAs, but it turns out that VMA split and merge is miserable.
+
+We've got 256 GB of user-space virtual memory to cover. There's 64GB of vmalloc/ioremap space (https://docs.kernel.org/arch/riscv/vm-layout.html).
+
+$2^{38} = 256$ GB user addressable bytes in Sv39. Each page is $2^{12} = 4096$ bytes. Then we need up to $2^{26} = 67108864$ cpumasks. If each cpumask is $2^3 = 8$ bytes, then it's up to $2^{29} = 536870912$ bytes or 512 MB that  we need for one ASID's cpumasks. That fits fine within the 64 GB of vmalloc space, so we'll just vmalloc an array and let the kernel allocate the masks we need.
+
+We ended up using kvcalloc() for this.
 
 https://docs.kernel.org/core-api/printk-basics.html
 
-
-We'd like to make the TLB maintenance process simpler for the systems programmer, as it is described as a substantial difficulty by new OS writers \cite{boos_theseus_2022} and (how do I cite Email with Boos and talking to Twizzler author Daniel Bittman in Margo's CPSC 509? I need to find the date probably.) BypassD-style systems \cite{yadalam_bypassd_2024} make this even more important if filesystems become integrated into the translation process.
+\section{Shootdown Filtering}
 
 \section{Global ASID in RISC-V?}
 If the hardware is making decisions about where to send translation coherence messages, it might be useful to have ASID \& VMID be global instead of hart-local?

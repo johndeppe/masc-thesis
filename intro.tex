@@ -11,4 +11,9 @@
 
 Maintaining TLB coherence is required for correctness but presents system overheads that impede multi-core scaling. One approach to reduce TLB coherence  overhead is to reduce TLB shootdown costs by sending shootdown messages to only those TLBs that contained the now-invalid page mapping. We investigate the costs of sharer lists for the purpose of shootdown filtering and propose methods for their use.
 
+We began this project hoping to make the TLB maintenance process simpler for the systems programmer, as it is described as a substantial difficulty by new OS writers \textbackslash{}cite\{boos\_theseus\_2022\} and (how do I cite Email with Boos and talking to Twizzler author Daniel Bittman in Margo's CPSC 509? I need to find the date probably.) BypassD-style systems \textbackslash{}cite\{yadalam\_bypassd\_2024\} make this even more important if filesystems become integrated into the translation process.
+
+However, we have failed, and instead have added yet another knob to Linux memory management.
+
+
 \endinput
